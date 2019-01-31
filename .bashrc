@@ -59,7 +59,7 @@ fi
 # The snippet 'S{debian_chroot:+($debian_chroot)}' was removed from the following
 # 2 PS1 definitions as it takes up too much space
 if [ "$color_prompt" = yes ]; then
-    PS1='\[\e[01;32m\][\u@\h \w]\[\e[00m\]\$ '
+    PS1='\[\e[01;31m\][\u@\h \w]\$\[\e[0m\] '
 else
     PS1='[\u@\h \w]\$ '
 fi
