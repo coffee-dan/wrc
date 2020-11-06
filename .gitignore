@@ -1,0 +1,7 @@
+# Blacklist files/folders in this directory
+/*
+
+# Whitelist .bashrc and repository files
+!.gitignore
+!.bashrc
+!.shells/
