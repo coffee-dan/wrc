@@ -78,12 +78,13 @@ fi
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-# Alias definitions.
-source ~/.shells/aliases
-# Prompts
-# source ~/.shells/prompts
 # Defaults
-source ~/.shells/defaults
+source ~/.shells/defaults.bashrc
+# Alias definitions.
+source ~/.shells/aliases.bashrc
+# Prompts
+source ~/.shells/prompts.bashrc
+
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -96,3 +97,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
