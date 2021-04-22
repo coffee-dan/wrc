@@ -84,7 +84,10 @@ source ~/.shells/defaults.bashrc
 source ~/.shells/aliases.bashrc
 # Prompts
 source ~/.shells/prompts.bashrc
-
+# Local config
+if [[ -r ~/.shells/local.bashrc ]]; then
+	source ~/.shells/local.bashrc
+fi
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile

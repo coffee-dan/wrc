@@ -5,3 +5,6 @@
 !.gitignore
 !.bashrc
 !.shells/
+
+# Ignore machine specific config
+.shells/local.bashrc
