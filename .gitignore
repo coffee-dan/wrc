@@ -5,3 +5,6 @@
 !.gitignore
 !.bashrc
 !.shells/
+!.zshrc
+!.zlogin
+!.zprofile
