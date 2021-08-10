@@ -8,3 +8,10 @@
 
 # Ignore machine specific config
 .shells/local.bashrc
+.shells/local.zshrc
+
+# Include zsh, vim, etc.
+!.zlogin
+!.zshrc
+!.zprofile
+!.vimrc
