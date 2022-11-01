@@ -100,8 +100,12 @@ source ~/.shells/local.zsh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias zshconfig="hx ~/.zshrc"
+alias ohmyzsh="hx ~/.oh-my-zsh"
+alias gcqa="git commit -a --amend --no-edit"
+alias gopa="git checkout main && git pull --all && git log"
+alias stetris="tetris && clear"
+alias rsrc="source ~/.zshrc"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
