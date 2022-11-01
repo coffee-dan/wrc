@@ -106,6 +106,7 @@ alias gcqa="git commit -a --amend --no-edit"
 alias gopa="git checkout main && git pull --all && git log"
 alias stetris="tetris && clear"
 alias rsrc="source ~/.zshrc"
+alias rra="RAILS_ENV=test bundle exec rails db:drop db:create db:schema:load db:seed:replant"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
