@@ -1,3 +1,8 @@
+# Some useful functions
+include () {
+    [[ -f "$1" ]] && source "$1"
+}
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -72,12 +77,12 @@ ZSH_THEME="eastwood"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
-source $ZSH/oh-my-zsh.sh
+include $ZSH/oh-my-zsh.sh
 
 # User configuration
 
 # local config
-source ~/.shells/local.zsh
+include ~/.shells/local.zsh
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -102,8 +107,9 @@ source ~/.shells/local.zsh
 # Example aliases
 alias zshconfig="hx ~/.zshrc"
 alias ohmyzsh="hx ~/.oh-my-zsh"
-alias gcqa="git commit -a --amend --no-edit"
-alias gopa="git checkout main && git pull --all && git log"
+alias gcaa="git commit -a --amend --no-edit"
+alias gpfw="git push --force-with-lease"
+alias gcpl="git checkout main && git pull --all && git log"
 alias stetris="tetris && clear"
 alias rsrc="source ~/.zshrc"
 alias rra="RAILS_ENV=test bundle exec rails db:drop db:create db:schema:load db:seed:replant"
@@ -112,7 +118,7 @@ alias rra="RAILS_ENV=test bundle exec rails db:drop db:create db:schema:load db:
 export PATH="$PATH:$HOME/.rvm/bin"
 
 # heroku autocomplete setup
-HEROKU_AC_ZSH_SETUP_PATH=/Users/danielramirez/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
+HEROKU_AC_ZSH_SETUP_PATH=/Users/danielramirez/Library/Caches/heroku/autocomplete/zsh_setup && include $HEROKU_AC_ZSH_SETUP_PATH;
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
