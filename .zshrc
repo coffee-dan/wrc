@@ -104,8 +104,7 @@ include ~/.shells/local.zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-# Example aliases
-alias zshconfig="hx ~/.zshrc"
+alias zshrc="hx ~/.zshrc"
 alias ohmyzsh="hx ~/.oh-my-zsh"
 alias gcaa="git commit -a --amend --no-edit"
 alias gpfw="git push --force-with-lease"
@@ -123,3 +122,5 @@ HEROKU_AC_ZSH_SETUP_PATH=/Users/danielramirez/Library/Caches/heroku/autocomplete
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+eval "$(zoxide init zsh)"
