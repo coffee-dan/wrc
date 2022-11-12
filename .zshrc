@@ -12,7 +12,7 @@ include () {
 include ~/.shells/local.zsh
 #
 alias zshrc="hx ~/.zshrc"
-alias ohmyzsh="hx ~/.oh-my-zsh"
+alias gst="git status"
 alias gcaa="git commit -a --amend --no-edit"
 alias gpfw="git push --force-with-lease"
 alias gcpl="git checkout main && git pull --all && git log"
