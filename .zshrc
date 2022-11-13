@@ -14,16 +14,18 @@ include () {
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # User configuration
+export EDITOR=/usr/local/bin/nvim
 
 # local config
 include ~/.shells/local.zsh
-#
+# Aliases
 alias zshrc="hx ~/.zshrc"
 alias gst="git status"
 alias gco="git checkout"
 alias gcaa="git commit -a --amend --no-edit"
 alias gpfw="git push --force-with-lease"
 alias gcpl="git checkout main && git pull --all && git log"
+alias vim="nvim"
 alias stetris="tetris && clear"
 alias rsrc="source ~/.zshrc"
 alias rra="RAILS_ENV=test bundle exec rails db:drop db:create db:schema:load db:seed:replant"
