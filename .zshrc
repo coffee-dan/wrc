@@ -19,16 +19,21 @@ export EDITOR=/usr/local/bin/nvim
 # local config
 include ~/.shells/local.zsh
 # Aliases
-alias zshrc="hx ~/.zshrc"
+#  Git Workflow
 alias gst="git status"
 alias gco="git checkout"
 alias gcaa="git commit -a --amend --no-edit"
 alias gpfw="git push --force-with-lease"
 alias gcpl="git checkout main && git pull --all && git log"
+#  Ruby Workflow
+alias be="bundle exec"
+alias rra="RAILS_ENV=test bundle exec rails db:drop db:create db:schema:load db:seed:replant"
+#  General
+alias zshrc="hx ~/.zshrc"
 alias vim="nvim"
 alias stetris="tetris && clear"
 alias rsrc="source ~/.zshrc"
-alias rra="RAILS_ENV=test bundle exec rails db:drop db:create db:schema:load db:seed:replant"
+alias c="clear -x"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
