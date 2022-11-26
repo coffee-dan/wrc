@@ -34,6 +34,7 @@ alias vim="nvim"
 alias stetris="tetris && clear"
 alias rsrc="source ~/.zshrc"
 alias c="clear -x"
+alias gwm="cowsay god i wish that were me"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
