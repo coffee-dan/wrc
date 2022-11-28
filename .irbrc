@@ -1,1 +1,1 @@
-IRB.conf[:USE_AUTOCOMPLETE] = false
+/Users/danielramirez/wrc/irb/irbrc
