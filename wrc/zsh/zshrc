@@ -29,6 +29,8 @@ include ~/.shells/local.zsh
 #  Git Workflow
 alias gst="git status"
 alias gco="git checkout"
+alias gfo="git fetch origin"
+alias gch="git reflog show --pretty=format:'%gs' | rg 'checkout:' | rg -o '[^ ]+$' | awk '!seen[\$1]++' | tail -n +2 | gum choose | xargs git checkout"
 alias gcaa="git commit -a --amend --no-edit"
 alias gpfw="git push --force-with-lease"
 alias gcpl="git checkout main && git pull --all && git log"
@@ -46,6 +48,8 @@ alias gwm="cowsay god i wish that were me"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+# And GOBIN
+export PATH="$PATH:$HOME/go/bin"
 
 # heroku autocomplete setup
 HEROKU_AC_ZSH_SETUP_PATH=/Users/danielramirez/Library/Caches/heroku/autocomplete/zsh_setup && include $HEROKU_AC_ZSH_SETUP_PATH;
