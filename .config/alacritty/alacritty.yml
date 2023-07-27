@@ -1,0 +1,24 @@
+colors:
+  primary:
+    # gi-thub dark
+    background: '#23272E'
+    foreground: '#ADBAC7'
+
+cursor:
+  thickness: 0.20
+  unfocused_hollow: true
+
+font:
+  size: 14.0
+  normal:
+    family: JetBrainsMono Nerd Font
+
+shell:
+  program: zsh
+  args:
+    - -l
+    - -c
+    - "tmux attach || tmux"
+
+window:
+  opacity: 0.8
