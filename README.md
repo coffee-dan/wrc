@@ -1,4 +1,4 @@
-# wrc
+# wrc - as in "Worse"
 
 Note to self, this is:
 - Super experiemntal right now
