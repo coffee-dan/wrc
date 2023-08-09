@@ -1,18 +1,5 @@
 # Blacklist files/folders in this directory
 /*
 
-# Whitelist .bashrc and repository files
+# Whitelist repository files
 !.gitignore
-!.bashrc
-!.shells/
-
-# Ignore machine specific config
-.shells/local.bashrc
-.shells/local.zshrc
-
-# Include zsh, vim, etc.
-!.zlogin
-!.zshrc
-!.zprofile
-!.vimrc
-!.tmux.conf
