@@ -5,3 +5,4 @@ stow bash
 stow irb
 stow --target=$HOME/.config/kitty kitty
 stow tmux
+stow vim
