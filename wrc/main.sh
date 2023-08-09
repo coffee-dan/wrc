@@ -2,3 +2,4 @@
 
 stow --ignore=.DS_Store zsh
 stow bash
+stow irb
