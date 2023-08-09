@@ -6,3 +6,4 @@ stow irb
 stow --target=$HOME/.config/kitty kitty
 stow tmux
 stow vim
+stow --target=$HOME/.config/alacritty alacritty
