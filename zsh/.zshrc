@@ -30,7 +30,7 @@ include ~/.shells/local.zsh
 alias gst="git status"
 alias gco="git checkout"
 alias gfo="git fetch origin"
-alias gch="git reflog show --pretty=format:'%gs' | rg 'checkout:' | rg -o '[^ ]+$' | awk '!seen[\$1]++' | tail -n +2 | gum choose | xargs git checkout"
+alias gch="git reflog show --pretty=format:'%gs' | rg 'checkout:' | rg -o '[^ ]+$' | awk '!seen[\$1]++' | tail -n +2 | fzf | xargs git checkout"
 alias gcaa="git commit -a --amend --no-edit"
 alias gpfw="git push --force-with-lease"
 alias gcpl="git checkout main && git pull --all && git log"
@@ -57,6 +57,8 @@ HEROKU_AC_ZSH_SETUP_PATH=/Users/danielramirez/Library/Caches/heroku/autocomplete
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+. "$HOME/.cargo/env"
 
 eval "$(zoxide init zsh)"
 source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme

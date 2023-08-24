@@ -4,3 +4,5 @@ export MY_ZSH_DIR="$HOME/wrc/zsh"
 # The original version is saved in .zprofile.pysave
 PATH="/Library/Frameworks/Python.framework/Versions/3.9/bin:${PATH}"
 export PATH
+
+. "$HOME/.cargo/env"
