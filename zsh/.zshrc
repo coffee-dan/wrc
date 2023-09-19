@@ -16,10 +16,6 @@ include () {
     [[ -f "$1" ]] && source "$1"
 }
 
-
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 # User configuration
 export EDITOR=/usr/local/bin/nvim
 
@@ -33,14 +29,14 @@ alias gfo="git fetch origin"
 alias gch="git reflog show --pretty=format:'%gs' | rg 'checkout:' | rg -o '[^ ]+$' | awk '!seen[\$1]++' | tail -n +2 | fzf | xargs git checkout"
 alias gcaa="git commit -a --amend --no-edit"
 alias gpfw="git push --force-with-lease"
-alias gcpl="git checkout main && git pull --all && git log"
+alias gpl="git pull"
 alias gstt="git log --pretty=short --graph --boundary --abbrev-commit --compact-summary origin/main...HEAD"
 #  Ruby Workflow
 alias be="bundle exec"
 alias rra="RAILS_ENV=test bundle exec rails db:drop db:create db:schema:load db:seed:replant"
 #  General
-alias zshrc="hx ~/.zshrc"
 alias vim="nvim"
+alias zshrc="$EDITOR ~/.zshrc"
 alias stetris="tetris && clear"
 alias rsrc="source ~/.zshrc"
 alias c="clear -x"
@@ -50,6 +46,8 @@ alias gwm="cowsay god i wish that were me"
 export PATH="$PATH:$HOME/.rvm/bin"
 # And GOBIN
 export PATH="$PATH:$HOME/go/bin"
+# And SBIN - Used by some Hombrew packages
+export PATH="/usr/local/sbin:$PATH"
 
 # heroku autocomplete setup
 HEROKU_AC_ZSH_SETUP_PATH=/Users/danielramirez/Library/Caches/heroku/autocomplete/zsh_setup && include $HEROKU_AC_ZSH_SETUP_PATH;
