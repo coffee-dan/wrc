@@ -35,19 +35,14 @@ alias gstt="git log --pretty=short --graph --boundary --abbrev-commit --compact-
 alias be="bundle exec"
 alias rra="RAILS_ENV=test bundle exec rails db:drop db:create db:schema:load db:seed:replant"
 #  General
-alias vim="nvim"
-alias zshrc="$EDITOR ~/.zshrc"
-alias stetris="tetris && clear"
-alias rsrc="source ~/.zshrc"
 alias c="clear -x"
 alias gwm="cowsay god i wish that were me"
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-# And GOBIN
-export PATH="$PATH:$HOME/go/bin"
-# And SBIN - Used by some Hombrew packages
-export PATH="/usr/local/sbin:$PATH"
+alias rsrc="source ~/.zshrc"
+# wip: use shell function
+# alias stash="mkdir -p ./_clutter && mv \$1 ./_clutter/"
+alias stetris="tetris && clear"
+alias vim="nvim"
+alias zshrc="$EDITOR ~/.zshrc"
 
 # heroku autocomplete setup
 HEROKU_AC_ZSH_SETUP_PATH=/Users/danielramirez/Library/Caches/heroku/autocomplete/zsh_setup && include $HEROKU_AC_ZSH_SETUP_PATH;
@@ -63,3 +58,21 @@ source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+export MY_ZSH_DIR="$HOME/wrc/zsh"
+
+# And GOBIN
+export PATH="$PATH:$HOME/go/bin"
+# And SBIN - Used by some Hombrew packages
+# export PATH="$PATH:/usr/local/sbin"
+
+# Setting PATH for Python 3.9
+# The original version is saved in .zprofile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.9/bin:${PATH}"
+export PATH
+
+. "$HOME/.cargo/env"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$GEM_HOME/bin:$HOME/.rvm/bin:$PATH"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
