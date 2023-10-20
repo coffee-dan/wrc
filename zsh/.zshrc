@@ -29,8 +29,11 @@ alias gfo="git fetch origin"
 alias gch="git reflog show --pretty=format:'%gs' | rg 'checkout:' | rg -o '[^ ]+$' | awk '!seen[\$1]++' | tail -n +2 | fzf | xargs git checkout"
 alias gcaa="git commit -a --amend --no-edit"
 alias gpfw="git push --force-with-lease"
+alias gpsup="git push --set-upstream origin"
 alias gpl="git pull"
 alias gstt="git log --pretty=short --graph --boundary --abbrev-commit --compact-summary origin/main...HEAD"
+#  GitHub Workflow
+alias ghpr="gh pr create --assignee @me --fill --web"
 #  Ruby Workflow
 alias be="bundle exec"
 alias rra="RAILS_ENV=test bundle exec rails db:drop db:create db:schema:load db:seed:replant"
@@ -60,19 +63,3 @@ source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 export MY_ZSH_DIR="$HOME/wrc/zsh"
-
-# And GOBIN
-export PATH="$PATH:$HOME/go/bin"
-# And SBIN - Used by some Hombrew packages
-# export PATH="$PATH:/usr/local/sbin"
-
-# Setting PATH for Python 3.9
-# The original version is saved in .zprofile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.9/bin:${PATH}"
-export PATH
-
-. "$HOME/.cargo/env"
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$GEM_HOME/bin:$HOME/.rvm/bin:$PATH"
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
