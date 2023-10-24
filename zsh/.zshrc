@@ -16,6 +16,11 @@ include () {
     [[ -f "$1" ]] && source "$1"
 }
 
+stash() {
+  mkdir -p ./_clutter
+  mv "$1" ./_clutter
+}
+
 # User configuration
 export EDITOR=/usr/local/bin/nvim
 
@@ -41,8 +46,6 @@ alias rra="RAILS_ENV=test bundle exec rails db:drop db:create db:schema:load db:
 alias c="clear -x"
 alias gwm="cowsay god i wish that were me"
 alias rsrc="source ~/.zshrc"
-# wip: use shell function
-# alias stash="mkdir -p ./_clutter && mv \$1 ./_clutter/"
 alias stetris="tetris && clear"
 alias vim="nvim"
 alias zshrc="$EDITOR ~/.zshrc"
