@@ -41,7 +41,10 @@ alias gstt="git log --pretty=short --graph --boundary --abbrev-commit --compact-
 alias gsh="git stash --include-untracked"
 alias gshp="git stash pop"
 alias gshs="git stash show --text"
+alias gcom="git stash --include-untracked && git checkout main"
+alias gnb="git stash --include-untracked && git checkout main && git pull && git checkout -b"
 #  GitHub Workflow
+alias ghdraft="git push --set-upstream origin && gh pr create --assignee @me --fill --draft && gh pr view --web"
 alias ghpr="gh pr create --assignee @me --fill --web"
 alias ghprview="gh pr view --web"
 alias ghview="gh repo view --web"
