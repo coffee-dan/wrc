@@ -1,5 +1,1 @@
-# Blacklist files/folders in this directory
-/*
 
-# Whitelist repository files
-!.gitignore
