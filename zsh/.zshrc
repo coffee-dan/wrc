@@ -59,6 +59,7 @@ alias rra="RAILS_ENV=test bundle exec rails db:drop db:create db:schema:load db:
 #  General
 alias c="clear -x"
 alias gwm="cowsay god i wish that were me"
+alias hfz="cat ~/.zsh_history | fzf"
 alias rsrc="source ~/.zshrc"
 alias stetris="tetris && clear"
 alias vim="nvim"
