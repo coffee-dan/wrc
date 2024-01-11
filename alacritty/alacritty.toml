@@ -1,0 +1,103 @@
+[colors.primary]
+# gi-thub dark
+background = "#23272E"
+foreground = "#ADBAC7"
+
+[cursor]
+thickness = 0.2
+unfocused_hollow = true
+
+[font]
+size = 14.0
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+
+# Alacritty > tmux > zsh/nvim
+# Keybinds caught by Alacritty aren't sent to tmux and so on (unless explicitly done)
+# IE <C-0> can't be bound in neovim because it's set as "ResetFontSize" here
+[keyboard]
+# bindings = [{ <key>, <mods>, <mode>, <action> | <chars> },]
+bindings = [
+    { key = "I", mods = "Control", chars = "\u001B[66;5ui" },
+    { key = "Equals", mods = "Control", action = "IncreaseFontSize" },
+    { key = "Minus", mods = "Control", action = "DecreaseFontSize" },
+    { key = "Key0", mods = "Control", action = "ResetFontSize" },
+    { key = "F11", mods = "None", action = "ToggleFullscreen" },
+
+    # Map Mac's COMMAND key to ALT
+    { key = "Back", mods = "Command", chars = "\u001B\u007F" },
+    { key = "Comma", mods = "Command", chars = "\u001B," },
+    { key = "Key1", mods = "Command", chars = "\u001B1" },
+    { key = "Key2", mods = "Command", chars = "\u001B2" },
+    { key = "Key3", mods = "Command", chars = "\u001B3" },
+    { key = "Key4", mods = "Command", chars = "\u001B4" },
+    { key = "Key5", mods = "Command", chars = "\u001B5" },
+    { key = "Key6", mods = "Command", chars = "\u001B6" },
+    { key = "Key7", mods = "Command", chars = "\u001B7" },
+    { key = "Key8", mods = "Command", chars = "\u001B8" },
+    { key = "Key9", mods = "Command", chars = "\u001B9" },
+    { key = "Key0", mods = "Command", chars = "\u001B0" },
+    { key = "Slash", mods = "Command", chars = "\u001B/" },
+
+
+    { key = "A", mods = "Command", chars = "\u001Ba" },
+    { key = "B", mods = "Command", chars = "\u001Bb" },
+    # { key = "C", mods = "Command", chars = "\u001Bc" },
+    { key = "D", mods = "Command", chars = "\u001Bd" },
+    { key = "E", mods = "Command", chars = "\u001Be" },
+    { key = "F", mods = "Command", chars = "\u001Bf" },
+    { key = "G", mods = "Command", chars = "\u001Bg" },
+    { key = "H", mods = "Command", chars = "\u001Bh" },
+    { key = "I", mods = "Command", chars = "\u001Bi" },
+    { key = "J", mods = "Command", chars = "\u001Bj" },
+    { key = "K", mods = "Command", chars = "\u001Bk" },
+    { key = "L", mods = "Command", chars = "\u001Bl" },
+    { key = "M", mods = "Command", chars = "\u001Bm" },
+    { key = "N", mods = "Command", chars = "\u001Bn" },
+    { key = "O", mods = "Command", chars = "\u001Bo" },
+    { key = "P", mods = "Command", chars = "\u001Bp" },
+    { key = "Q", mods = "Command", chars = "\u001Bq" },
+    { key = "R", mods = "Command", chars = "\u001Br" },
+    { key = "S", mods = "Command", chars = "\u001Bs" },
+    { key = "T", mods = "Command", chars = "\u001Bt" },
+    { key = "U", mods = "Command", chars = "\u001Bu" },
+    # { key = "V", mods = "Command", chars = "\u001Bv" },
+    { key = "W", mods = "Command", chars = "\u001Bw" },
+    { key = "X", mods = "Command", chars = "\u001Bx" },
+    { key = "Y", mods = "Command", chars = "\u001By" },
+    { key = "Z", mods = "Command", chars = "\u001Bz" },
+    { key = "A", mods = "Command | Shift", chars = "\u001BA" },
+    { key = "B", mods = "Command | Shift", chars = "\u001BB" },
+    { key = "C", mods = "Command | Shift", chars = "\u001BC" },
+    { key = "D", mods = "Command | Shift", chars = "\u001BD" },
+    { key = "E", mods = "Command | Shift", chars = "\u001BE" },
+    { key = "F", mods = "Command | Shift", chars = "\u001BF" },
+    { key = "G", mods = "Command | Shift", chars = "\u001BG" },
+    { key = "H", mods = "Command | Shift", chars = "\u001BH" },
+    { key = "I", mods = "Command | Shift", chars = "\u001BI" },
+    { key = "J", mods = "Command | Shift", chars = "\u001BJ" },
+    { key = "K", mods = "Command | Shift", chars = "\u001BK" },
+    { key = "L", mods = "Command | Shift", chars = "\u001BL" },
+    { key = "M", mods = "Command | Shift", chars = "\u001BM" },
+    { key = "N", mods = "Command | Shift", chars = "\u001BN" },
+    { key = "O", mods = "Command | Shift", chars = "\u001BO" },
+    { key = "P", mods = "Command | Shift", chars = "\u001BP" },
+    { key = "Q", mods = "Command | Shift", chars = "\u001BQ" },
+    { key = "R", mods = "Command | Shift", chars = "\u001BR" },
+    { key = "S", mods = "Command | Shift", chars = "\u001BS" },
+    { key = "T", mods = "Command | Shift", chars = "\u001BT" },
+    { key = "U", mods = "Command | Shift", chars = "\u001BU" },
+    { key = "V", mods = "Command | Shift", chars = "\u001BV" },
+    { key = "W", mods = "Command | Shift", chars = "\u001BW" },
+    { key = "X", mods = "Command | Shift", chars = "\u001BX" },
+    { key = "Y", mods = "Command | Shift", chars = "\u001BY" },
+    { key = "Z", mods = "Command | Shift", chars = "\u001BZ" },
+]
+
+[shell]
+args = ["-l", "-c", "tmux attach || tmux"]
+program = "zsh"
+
+[window]
+opacity = 0.95
