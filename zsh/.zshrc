@@ -55,7 +55,8 @@ alias ghprview="gh pr view --web"
 alias ghview="gh repo view --web"
 #  Ruby Workflow
 alias be="bundle exec"
-alias rra="RAILS_ENV=test bundle exec rails db:drop db:create db:schema:load db:seed:replant"
+alias rrt="RAILS_ENV=test bundle exec rails db:drop db:create db:schema:load db:seed:replant"
+alias rrd="RAILS_ENV=development bundle exec rails db:drop db:create db:schema:load db:seed:replant"
 #  General
 alias c="clear -x"
 alias gwm="cowsay god i wish that were me"
@@ -64,6 +65,9 @@ alias rsrc="source ~/.zshrc"
 alias stetris="tetris && clear"
 alias vim="nvim"
 alias zshrc="$EDITOR ~/.zshrc"
+#  Debugging Convenience
+alias bssl1="brew unlink openssl@3 && brew link openssl@1.1"
+alias bssl3="brew unlink openssl@1.1 && brew link openssl@3"
 
 # heroku autocomplete setup
 HEROKU_AC_ZSH_SETUP_PATH=/Users/danielramirez/Library/Caches/heroku/autocomplete/zsh_setup && include $HEROKU_AC_ZSH_SETUP_PATH;
