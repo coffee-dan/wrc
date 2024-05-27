@@ -32,9 +32,9 @@ alias dc="docker compose"
 alias dcu="docker compose up"
 alias dcuf="docker compose up --remove-orphans --build" # up with _fresh_ services and all unreferenced services removed
 alias dcd="docker compose down"
-alias dex="docker exec" # usage: de [service_name] [command]
-alias dwrc="docker exec web rails console"
-alias dwsh="docker exec web bash"
+alias dex="docker compose exec" # usage: de [service_name] [command]
+alias dwrc="docker compose exec web rails console"
+alias dwsh="docker compose exec web bash"
 alias daw="docker attach web"
 #  Git Workflow
 alias gst="git status"
