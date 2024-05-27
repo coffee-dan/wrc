@@ -27,6 +27,15 @@ export EDITOR=/usr/local/bin/nvim
 # local config
 include ~/.shells/local.zsh
 # Aliases
+#  Docker Workflow
+alias dc="docker compose"
+alias dcu="docker compose up"
+alias dcuf="docker compose up --remove-orphans --build" # up with _fresh_ services and all unreferenced services removed
+alias dcd="docker compose down"
+alias dex="docker exec" # usage: de [service_name] [command]
+alias dwrc="docker exec web rails console"
+alias dwsh="docker exec web bash"
+alias daw="docker attach web"
 #  Git Workflow
 alias gst="git status"
 alias gco="git checkout"
@@ -43,6 +52,7 @@ alias gpfw="git push --force-with-lease"
 alias gpsup="git push --set-upstream origin"
 alias gpl="git pull"
 alias gpr="git pull --rebase"
+alias gph="git fetch && git reset --hard"
 alias gpla="git pull --all"
 alias gstt="git log --pretty=short --graph --boundary --abbrev-commit --compact-summary origin/main...HEAD"
 alias gsh="git stash --include-untracked"
@@ -57,6 +67,7 @@ alias got="go test"
 alias gomi="go mod init placeholder"
 alias gomt="go mod tidy"
 #  GitHub Workflow
+alias ghco="gh pr checkout"
 alias ghdraft="git push --set-upstream origin && gh pr create --assignee @me --fill --draft && gh pr view --web"
 alias ghpr="gh pr create --assignee @me --fill --web"
 alias ghprv="gh pr view --web"
