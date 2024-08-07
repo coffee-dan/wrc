@@ -11,3 +11,7 @@ mkdir -p ~/.config/nvim
 stow --target=$HOME/.config/alacritty alacritty
 stow --target=$HOME/.config/kitty kitty
 stow --target=$HOME/.config/nvim nvim
+
+export PATH="/opt/homebrew/bin:$PATH"
+
+brew install zoxide mise powerlevel10k
