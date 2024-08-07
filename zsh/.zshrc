@@ -30,11 +30,11 @@ include ~/.shells/local.zsh
 #  Docker Workflow
 alias dc="docker compose"
 alias dcu="docker compose up"
-alias dcuf="docker compose up --remove-orphans --build" # up with _fresh_ services and all unreferenced services removed
+alias dcub="docker compose up --build"
 alias dcd="docker compose down"
 alias dex="docker compose exec" # usage: de [service_name] [command]
 alias dwrc="docker compose exec web rails console"
-alias dwsh="docker compose exec web bash"
+alias dwb="docker compose exec web bash"
 alias daw="docker attach web"
 #  Git Workflow
 alias gst="git status"
@@ -106,3 +106,5 @@ source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 export MY_ZSH_DIR="$HOME/wrc/zsh"
+
+eval "$(mise activate zsh)"

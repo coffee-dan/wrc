@@ -2,6 +2,8 @@
 # environment for login shells
 # And GOBIN
 export PATH="$PATH:$HOME/go/bin"
+# And homebrew location
+export PATH="/opt/homebrew/bin:$PATH"
 # And SBIN - Used by some Hombrew packages
 export PATH="/usr/local/sbin:$PATH"
 
@@ -10,9 +12,5 @@ export PATH="/usr/local/sbin:$PATH"
 export PATH="/Library/Frameworks/Python.framework/Versions/3.9/bin:$PATH"
 
 . "$HOME/.cargo/env"
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$GEM_HOME/bin:$HOME/.rvm/bin:$PATH"
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 export PATH
