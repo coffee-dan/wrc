@@ -22,7 +22,7 @@ stash() {
 }
 
 # User configuration
-export EDITOR=/usr/local/bin/nvim
+export EDITOR=nvim
 
 # local config
 include ~/.shells/local.zsh
@@ -100,7 +100,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 
 eval "$(zoxide init zsh)"
-source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
+
+source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
