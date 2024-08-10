@@ -1,0 +1,84 @@
+{
+    "[haml]": {
+      "editor.tabSize": 2,
+      "editor.formatOnSave": false
+    },
+    "terminal.integrated.drawBoldTextInBrightColors": false,
+    "[javascript]": { "editor.defaultFormatter": "vscode.typescript-language-features" },
+    "[ruby]": {
+      "editor.tabSize": 2,
+      "editor.formatOnSave": false,
+      "editor.defaultFormatter": "Shopify.ruby-lsp"
+    },
+    "[scss]": { "editor.defaultFormatter": "vscode.css-language-features" },
+
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.fontSize": 10,
+    "editor.formatOnSave": false,
+    "editor.inlineSuggest.enabled": true,
+    "editor.insertSpaces": true,
+    "editor.minimap.enabled": false,
+    "editor.stickyScroll.enabled": true,
+    "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?",
+    "editor.unusualLineTerminators": "auto",
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "git.mergeEditor": true,
+    "gitlens.views.branches.avatars": false,
+    "gitlens.views.branches.showBranchComparison": false,
+    "json.maxItemsComputed": 1000000,
+    "telemetry.telemetryLevel": "off",
+    "terminal.integrated.enableMultiLinePasteWarning": "never",
+    "terminal.integrated.fontFamily": "Go Mono, Menlo, Monaco, 'Courier New', monospace",
+    "window.clickThroughInactive": false,
+    "workbench.editor.wrapTabs": false,
+    "workbench.startupEditor": "none",
+    "rubyLsp.enabledFeatures": {
+      "codeActions": true,
+      "diagnostics": true,
+      "documentHighlights": true,
+      "documentLink": true,
+      "documentSymbols": true,
+      "foldingRanges": true,
+      "formatting": true,
+      "hover": true,
+      "inlayHint": true,
+      "onTypeFormatting": true,
+      "selectionRanges": true,
+      "semanticHighlighting": true,
+      "completion": true,
+      "codeLens": false,
+      "definition": true,
+      "workspaceSymbol": true
+    },
+    "rubyLsp.enableExperimentalFeatures": true,
+    "editor.fontFamily": "JetBrains Mono, Menlo, Monaco, 'Courier New', monospace",
+    "editor.unicodeHighlight.invisibleCharacters": false,
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "workbench.editor.enablePreview": false,
+    "workbench.layoutControl.enabled": false,
+    "window.commandCenter": false,
+    "[json]": {
+      "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[html]": {
+      "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "git.openRepositoryInParentFolders": "always",
+    "window.zoomLevel": 1,
+    "gitlens.views.commits.avatars": false,
+    "gitlens.views.commits.showBranchComparison": false,
+    "gitlens.views.commits.pullRequests.showForBranches": false,
+    "gitlens.views.commits.pullRequests.enabled": false,
+    "workbench.sideBar.location": "right",
+    "workbench.activityBar.location": "top",
+    "editor.renderWhitespace": "none",
+    "editor.useTabStops": false,
+    "rubyLsp.rubyVersionManager": {
+      "identifier": "mise",
+      "miseExecutablePath": "/opt/homebrew/bin/mise"
+    }
+  }
