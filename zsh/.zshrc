@@ -86,9 +86,6 @@ alias rsrc="source ~/.zshrc"
 alias stetris="tetris && clear"
 alias vim="nvim"
 alias zshrc="$EDITOR ~/.zshrc"
-#  Debugging Convenience
-alias bssl1="brew unlink openssl@3 && brew link openssl@1.1"
-alias bssl3="brew unlink openssl@1.1 && brew link openssl@3"
 
 # heroku autocomplete setup
 HEROKU_AC_ZSH_SETUP_PATH=/Users/danielramirez/Library/Caches/heroku/autocomplete/zsh_setup && include $HEROKU_AC_ZSH_SETUP_PATH;
@@ -101,7 +98,11 @@ export NVM_DIR="$HOME/.nvm"
 
 eval "$(zoxide init zsh)"
 
-source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme
+if command -v brew >/dev/null; then
+  source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme
+else
+  source ~/powerlevel10k/powerlevel10k.zsh-theme
+fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

@@ -14,4 +14,10 @@ stow --target=$HOME/.config/nvim nvim
 
 export PATH="/opt/homebrew/bin:$PATH"
 
-brew install zoxide mise powerlevel10k
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    echo "a linux"
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+    brew install zoxide mise powerlevel10k
+else
+    echo "something new!"
+fi
