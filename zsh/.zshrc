@@ -5,9 +5,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Default p10k theme
-# source "$MY_ZSH_DIR/powerlevel10k/powerlevel10k.zsh-theme"
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f "$MY_ZSH_DIR/.p10k.zsh" ]] || source "$MY_ZSH_DIR/.p10k.zsh"
 
@@ -20,9 +17,6 @@ stash() {
   mkdir -p ./_clutter
   mv "$1" ./_clutter
 }
-
-# User configuration
-export EDITOR=nvim
 
 # local config
 include ~/.shells/local.zsh
@@ -87,10 +81,6 @@ alias stetris="tetris && clear"
 alias vim="nvim"
 alias zshrc="$EDITOR ~/.zshrc"
 
-# heroku autocomplete setup
-HEROKU_AC_ZSH_SETUP_PATH=/Users/danielramirez/Library/Caches/heroku/autocomplete/zsh_setup && include $HEROKU_AC_ZSH_SETUP_PATH;
-
-export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
@@ -106,7 +96,3 @@ fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-export MY_ZSH_DIR="$HOME/wrc/zsh"
-
-eval "$(mise activate zsh)"
