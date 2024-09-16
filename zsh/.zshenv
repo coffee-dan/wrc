@@ -14,7 +14,7 @@ if [[ $(uname) == "Darwin" ]]; then
     export HEROKU_AC_ZSH_SETUP_PATH=~/Library/Caches/heroku/autocomplete/zsh_setup && include $HEROKU_AC_ZSH_SETUP_PATH;
 fi
 
-export EDITOR=nvim
+export EDITOR=hx
 export PATH
 export MY_ZSH_DIR="$HOME/wrc/zsh"
 export NVM_DIR="$HOME/.nvm"

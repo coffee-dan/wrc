@@ -78,7 +78,6 @@ alias gwm="cowsay god i wish that were me"
 alias hfz="cat ~/.zsh_history | fzf"
 alias rsrc="source ~/.zshrc"
 alias stetris="tetris && clear"
-alias vim="nvim"
 alias zshrc="$EDITOR ~/.zshrc"
 
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -90,7 +89,7 @@ eval "$(zoxide init zsh)"
 
 if command -v brew >/dev/null; then
   source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme
-else
+elif command -v apt-get >/dev/null; then
   source ~/powerlevel10k/powerlevel10k.zsh-theme
 fi
 

@@ -5,6 +5,7 @@ stow irb
 stow tmux
 stow vim
 stow zsh
+stow wezterm
 mkdir -p ~/.config/alacritty
 mkdir -p ~/.config/kitty
 mkdir -p ~/.config/nvim
