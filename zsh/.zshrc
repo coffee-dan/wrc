@@ -8,16 +8,6 @@ fi
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f "$MY_ZSH_DIR/.p10k.zsh" ]] || source "$MY_ZSH_DIR/.p10k.zsh"
 
-# Some useful functions
-include () {
-    [[ -f "$1" ]] && source "$1"
-}
-
-stash() {
-  mkdir -p ./_clutter
-  mv "$1" ./_clutter
-}
-
 # local config
 include ~/.shells/local.zsh
 # Aliases
@@ -26,6 +16,7 @@ alias dc="docker compose"
 alias dcu="docker compose up"
 alias dcub="docker compose up --build"
 alias dcd="docker compose down"
+alias dcr="docker compose restart" # usage dcr [service_name]
 alias dex="docker compose exec" # usage: de [service_name] [command]
 alias dwrc="docker compose exec web rails console"
 alias dwb="docker compose exec web bash"
@@ -80,14 +71,17 @@ alias rsrc="source ~/.zshrc"
 alias stetris="tetris && clear"
 alias zshrc="$EDITOR ~/.zshrc"
 
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 
-eval "$(zoxide init zsh)"
+if command -v zoxide >/dev/null; then
+  eval "$(zoxide init zsh)"
+fi
 
 if command -v brew >/dev/null; then
+
+  [ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && \. "$(brew --prefix)/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
   source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme
 elif command -v apt-get >/dev/null; then
   source ~/powerlevel10k/powerlevel10k.zsh-theme
