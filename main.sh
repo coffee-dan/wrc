@@ -9,9 +9,11 @@ stow wezterm
 mkdir -p ~/.config/alacritty
 mkdir -p ~/.config/kitty
 mkdir -p ~/.config/nvim
+mkdir -p ~/.config/helix
 stow --target=$HOME/.config/alacritty alacritty
 stow --target=$HOME/.config/kitty kitty
 stow --target=$HOME/.config/nvim nvim
+stow --target=$HOME/.config/helix helix
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     echo "a linux"
