@@ -1,3 +1,12 @@
+if [[ $(uname) == "Darwin" ]]; then
+  PATH=/opt/homebrew/bin:$PATH
+  # And SBIN - Used by some Hombrew packages
+  PATH=/usr/local/sbin:$PATH
+  export HEROKU_AC_ZSH_SETUP_PATH=~/Library/Caches/heroku/autocomplete/zsh_setup && include $HEROKU_AC_ZSH_SETUP_PATH;
+fi
+
+eval "$(mise activate zsh)"
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -18,6 +27,8 @@ alias dcub="docker compose up --build"
 alias dcd="docker compose down"
 alias dcr="docker compose restart" # usage dcr [service_name]
 alias dex="docker compose exec" # usage: de [service_name] [command]
+alias dexi="docker compose exec --interactive --tty" # docker-exec-interactive
+alias dew="docker compose exec web"
 alias dwrc="docker compose exec web rails console"
 alias dwb="docker compose exec web bash"
 alias daw="docker attach web"
@@ -54,7 +65,7 @@ alias gomt="go mod tidy"
 #  GitHub Workflow
 alias ghco="gh pr checkout"
 alias ghdraft="git push --set-upstream origin && gh pr create --assignee @me --fill --draft && gh pr view --web"
-alias ghpr="gh pr create --assignee @me --fill --web"
+alias ghpr="git push --set-upstream origin && gh pr create --assignee @me --fill --web"
 alias ghprv="gh pr view --web"
 alias ghv="gh repo view --web"
 #  Ruby Workflow
