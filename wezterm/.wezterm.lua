@@ -7,23 +7,13 @@ config.font = wz.font 'JetBrains Mono'
 
 config.hide_tab_bar_if_only_one_tab = true
 
-config.window_background_opacity = 0.65
+config.window_background_opacity = 0.85
 
 local mod = string.find(wz.target_triple, "apple") and "SUPER" or "ALT"
 
 config.keys = {
     -- New tabs with <mod>+T
     {key="t", mods=mod, action=wz.action{SpawnTab="CurrentPaneDomain"}},
-    -- Move between tabs with <mod>+[1-9] <mod>+Left <mod>+Right
-    {key="1", mods=mod, action=wz.action{ActivateTab=0}},
-    {key="2", mods=mod, action=wz.action{ActivateTab=1}},
-    {key="3", mods=mod, action=wz.action{ActivateTab=2}},
-    {key="4", mods=mod, action=wz.action{ActivateTab=3}},
-    {key="5", mods=mod, action=wz.action{ActivateTab=4}},
-    {key="6", mods=mod, action=wz.action{ActivateTab=5}},
-    {key="7", mods=mod, action=wz.action{ActivateTab=6}},
-    {key="8", mods=mod, action=wz.action{ActivateTab=7}},
-    {key="9", mods=mod, action=wz.action{ActivateTab=8}},
     {key="LeftArrow", mods=mod, action=wz.action{ActivateTabRelative=-1}},
     {key="RightArrow", mods=mod, action=wz.action{ActivateTabRelative=1}},
 
