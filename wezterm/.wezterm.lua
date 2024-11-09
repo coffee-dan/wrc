@@ -1,3 +1,4 @@
+local table = require 'table'
 local wz = require 'wezterm'
 local config = wz.config_builder()
 
@@ -37,7 +38,7 @@ config.keys = {
 -- Move between tabs with Alt+[1-9] on non-macos systems
 if mod == "ALT" then
     for i=0,8 do
-        table.insert(config.keys, {key=string(i), mods=mod, action=wz.action{ActivateTab=i}})
+        table.insert(config.keys, {key=tostring(i),mods=mod, action=wz.action{ActivateTab=i}})
     end
 end
 
