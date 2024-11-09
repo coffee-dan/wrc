@@ -50,7 +50,8 @@ alias gpl="git pull"
 alias gpr="git pull --rebase"
 alias gph="git fetch && git reset --hard"
 alias gpla="git pull --all"
-alias gstt="git log --pretty=short --graph --boundary --abbrev-commit --compact-summary origin/main...HEAD"
+alias gtl="git log"
+alias gtlg="git log --pretty=short --graph --boundary --abbrev-commit --compact-summary origin/main...HEAD"
 alias gsh="git stash --include-untracked"
 alias gshp="git stash pop"
 alias gshs="git stash show --text"
@@ -74,6 +75,10 @@ alias rdrt="RAILS_ENV=test bundle exec rails db:drop db:create db:schema:load db
 alias rdpt="RAILS_ENV=test bundle exec rails db:seed:replant"
 alias rdr="RAILS_ENV=development bundle exec rails db:drop db:create db:schema:load db:seed:replant"
 alias rdp="RAILS_ENV=development bundle exec rails db:seed:replant"
+#  NixOS
+alias nx-build="sudo nixos-rebuild boot"
+alias nx-switch="sudo nixos-rebuild switch"
+alias nx-rollback='sudo nixos-rebuild switch --rollback'
 #  General
 alias c="clear -x"
 alias gwm="cowsay god i wish that were me"
