@@ -15,11 +15,9 @@ stow --target=$HOME/.config/kitty kitty
 stow --target=$HOME/.config/nvim nvim
 stow --target=$HOME/.config/helix helix
 
-if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    echo "a linux"
+if [[ "$MY_OS" == "NixOS" ]]; then
+    sudo stow --target=/etc/nixos nixos
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     export PATH="/opt/homebrew/bin:$PATH"
     brew install zoxide mise powerlevel10k
-else
-    echo "something new!"
 fi
