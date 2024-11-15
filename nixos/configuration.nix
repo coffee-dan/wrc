@@ -114,6 +114,7 @@
     pulseaudioFull
     rar
     rofi-wayland
+    starship
     steam
     stow
     tmux
@@ -127,7 +128,9 @@
     zsh-powerlevel10k
   ];
 
-  programs.zsh.promptInit = "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+  # programs.zsh.promptInit = "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+  programs.zsh.promptInit = "eval \"$(starship init zsh)\"";
+
 
   fonts.packages = with pkgs; [
     # Don't pull in every nerdfont
