@@ -20,7 +20,7 @@ stow --target=$HOME/.config/ starship
 if [[ "$MY_OS" == "NixOS" ]]; then
     sudo stow --target=/etc/nixos nixos
     stow --target=$HOME/.config/mise --dir=mise nixos
-elif [[ "$OSTYPE" == "darwin"* ]]; then
+elif [[ "$MY_OS" == "MacOS" ]]; then
     export PATH="/opt/homebrew/bin:$PATH"
-    brew install zoxide mise powerlevel10k
+    brew install zoxide mise powerlevel10k starship
 fi

@@ -7,11 +7,16 @@ fi
 
 eval "$(mise activate zsh)"
 
-if command -v brew >/dev/null; then
+if [[ "$MY_OS" == "MacOS" ]]; then
   [ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && \. "$(brew --prefix)/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
-  source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme
+  if [[ "$MY_ZSH_PROMPT" == "starship" ]]; then
+    eval "$(starship init zsh)"
+  elif [[ "$MY_ZSH_PROMPT" == "powerlevel10k" ]]; then
+    source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme
+  fi
+
 elif command -v apt-get >/dev/null; then
   # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
   # Initialization code that may require console input (password prompts, [y/n]
@@ -78,6 +83,8 @@ alias ghdraft="git push --set-upstream origin && gh pr create --assignee @me --f
 alias ghpr="git push --set-upstream origin && gh pr create --assignee @me --fill --web"
 alias ghprv="gh pr view --web"
 alias ghv="gh repo view --web"
+#  Heroku Workflow
+alias hecc="heroku builds:cache:purge --app"
 #  Ruby Workflow
 alias be="bundle exec"
 alias rdrt="RAILS_ENV=test bundle exec rails db:drop db:create db:schema:load db:seed:replant"
@@ -95,6 +102,7 @@ alias hfz="cat ~/.zsh_history | fzf"
 alias rsrc="source ~/.zshrc"
 alias stetris="tetris && clear"
 alias zshrc="$EDITOR ~/.zshrc"
+alias opng="optipng -clobber -o7"
 
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 

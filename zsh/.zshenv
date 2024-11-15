@@ -14,7 +14,14 @@ stash() {
 PATH=$PATH:$HOME/go/bin
 PATH=$PATH:$HOME/.local/bin/
 
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  MY_OS="MacOS"
+  MY_ZSH_PROMPT="starship"
+fi
+
 export EDITOR=hx
-export PATH
+export MY_OS
 export MY_ZSH_DIR="$HOME/wrc/zsh"
+export MY_ZSH_PROMPT
 export NVM_DIR="$HOME/.nvm"
+export PATH
