@@ -1,0 +1,3 @@
+# https://nix.dev/guides/faq#how-to-run-non-nix-executables
+[settings]
+all_compile = true

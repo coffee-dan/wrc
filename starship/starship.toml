@@ -1,0 +1,2 @@
+[golang]
+format = "via go[$version](bold cyan)"
