@@ -6,4 +6,5 @@ format = "on [$branch]($style) "
 truncation_length = 32
 
 [golang]
-format = "via go[$version](bold cyan)"
+version_format = "${raw}"
+format = "via [go@$version](bold cyan)"
