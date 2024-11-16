@@ -1,2 +1,9 @@
+[docker_context]
+format = 'via [🐋 $context](blue bold)'
+
+[git_branch]
+format = "on [$branch]($style) "
+truncation_length = 32
+
 [golang]
 format = "via go[$version](bold cyan)"
