@@ -1,7 +1,7 @@
 if [[ $(uname) == "Darwin" ]]; then
   PATH=/opt/homebrew/bin:$PATH
-  # And SBIN - Used by some Hombrew packages
-  PATH=/usr/local/sbin:$PATH
+  # And BIN - Used by some Hombrew packages
+  PATH=/usr/local/bin:$PATH
   export HEROKU_AC_ZSH_SETUP_PATH=~/Library/Caches/heroku/autocomplete/zsh_setup && include $HEROKU_AC_ZSH_SETUP_PATH;
 fi
 
