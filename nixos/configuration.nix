@@ -105,33 +105,36 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    _1password-gui
-    alacritty
     bat
-    google-chrome
     fzf
     git
     helix
     home-manager
-    lutris
     mise
-    mpv
     neofetch
     pulseaudioFull
     rar
     rofi-wayland
     starship
-    steam
     stow
     tmux
     udisks
-    vscode
-    wezterm
     wget
     xclip
     zoxide
     zsh
     zsh-powerlevel10k
+
+    _1password-gui
+    alacritty
+    discord-ptb
+    google-chrome
+    lutris
+    mpv
+    steam
+    vscode
+    wezterm
+    zoom-us
   ];
 
   # programs.zsh.promptInit = "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
