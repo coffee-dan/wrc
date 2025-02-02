@@ -106,6 +106,8 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     bat
+    clipman
+    fuzzel
     fzf
     git
     helix
@@ -131,6 +133,7 @@
     google-chrome
     lutris
     mpv
+    pinta
     steam
     vscode
     wezterm
