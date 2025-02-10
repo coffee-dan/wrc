@@ -128,6 +128,7 @@
     zsh-powerlevel10k
 
     _1password-gui
+    aseprite
     alacritty
     discord-ptb
     google-chrome
