@@ -5,7 +5,7 @@ local config = wz.config_builder()
 config.default_prog = { 'zsh' }
 config.font = wz.font 'JetBrains Mono'
 config.hide_tab_bar_if_only_one_tab = true
-config.window_background_opacity = 0.85
+-- config.window_background_opacity = 0.8
 
 local mod = string.find(wz.target_triple, "apple") and "SUPER" or "ALT"
 
@@ -41,5 +41,7 @@ if mod == "ALT" then
         table.insert(config.keys, {key=tostring(i),mods=mod, action=wz.action{ActivateTab=i-1}})
     end
 end
+
+config.color_scheme = "Dracula (Gogh)"
 
 return config

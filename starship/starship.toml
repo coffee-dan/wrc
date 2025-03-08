@@ -1,10 +1,15 @@
 [docker_context]
-format = 'via [🐋 $context](blue bold)'
+disabled = true
 
 [git_branch]
 format = "on [$branch]($style) "
 truncation_length = 32
 
 [golang]
-version_format = "${raw}"
-format = "via [go@$version](bold cyan)"
+disabled = true
+
+[nodejs]
+disabled = true
+
+[ruby]
+disabled = true
