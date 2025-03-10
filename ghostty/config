@@ -1,0 +1,37 @@
+# see: https://ghostty.org/docs/config/keybind
+# New tabs
+keybind = super+t=new_tab
+keybind = super+left=move_tab:-1
+keybind = super+right=move_tab:1
+
+# New splits super+ijkl
+keybind = super+i=new_split:up
+keybind = super+j=new_split:left
+keybind = super+k=new_split:down
+keybind = super+l=new_split:right
+
+# Move between splits super+wasd
+keybind = super+w=goto_split:up
+keybind = super+a=goto_split:left
+keybind = super+s=goto_split:down
+keybind = super+d=goto_split:right
+
+# Resize current split super+shift+wasd
+keybind = super+shift+w=resize_split:up,10
+keybind = super+shift+a=resize_split:left,10
+keybind = super+shift+s=resize_split:down,10
+keybind = super+shift+d=resize_split:right,10
+
+# Equalize splits
+keybind = super+shift+e=equalize_splits
+
+# Close split/tab super+k
+keybind = super+q=close_surface
+
+# Reload config
+keybind = super+r=reload_config
+
+# Toggle quick terminal - This currently only works on macOS.
+keybind = global:cmd+grave_accent=toggle_quick_terminal
+
+theme = dracula-gogh

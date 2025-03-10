@@ -2,12 +2,14 @@
 
 stow bash
 stow irb
+stow login
 stow tmux
 stow vim
-stow zsh
 stow wezterm
+stow zsh
 mkdir -p ~/.config/alacritty
 mkdir -p ~/.config/fuzzel
+mkdir -p ~/.config/ghostty
 mkdir -p ~/.config/helix
 mkdir -p ~/.config/kitty
 mkdir -p ~/.config/nvim
@@ -16,6 +18,7 @@ mkdir -p ~/.config/rofi
 mkdir -p ~/.config/starship
 stow --target=$HOME/.config/alacritty alacritty
 stow --target=$HOME/.config/fuzzel fuzzel
+stow --target=$HOME/.config/ghostty ghostty
 stow --target=$HOME/.config/helix helix
 stow --target=$HOME/.config/kitty kitty
 stow --target=$HOME/.config/nvim nvim
