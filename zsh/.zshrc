@@ -32,7 +32,7 @@ elif command -v apt-get >/dev/null; then
 fi
 
 # local config
-include ~/.shells/local.zsh
+include ~/.local.zshrc
 # Aliases
 #  Docker Workflow
 alias dc="docker compose"
