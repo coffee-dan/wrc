@@ -106,7 +106,8 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     bat
-    clipman
+    # clipman
+    cliphist
     fuzzel
     fzf
     git
@@ -131,10 +132,12 @@
     aseprite
     alacritty
     discord-ptb
+    godot_4
     google-chrome
     lutris
     mpv
     pinta
+    protonvpn-gui
     steam
     vscode
     wezterm
