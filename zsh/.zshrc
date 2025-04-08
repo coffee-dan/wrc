@@ -73,6 +73,17 @@ alias gshl="git stash list"
 alias gshs="git stash show --text"
 alias gcom="git stash --include-untracked && git checkout main"
 alias gnb="git stash --include-untracked && git checkout main && git pull && git checkout -b"
+
+function git-sync () {
+  local target="${1:-$(git branch --show-current)}"
+  local source="${2:-main}"
+
+  git checkout "$source"
+  git pull
+  git checkout "$target"
+  git reset --hard "$source"
+}
+
 #  Go Workflow
 alias gob="go build"
 alias gor="go run ."
