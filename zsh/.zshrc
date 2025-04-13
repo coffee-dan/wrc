@@ -108,6 +108,11 @@ alias rdp="RAILS_ENV=development bundle exec rails db:seed:replant"
 alias nx-build="sudo nixos-rebuild boot"
 alias nx-switch="sudo nixos-rebuild switch"
 alias nx-rollback='sudo nixos-rebuild switch --rollback'
+alias nxcl='nix-channel --list'
+alias nxcu='sudo nix-channel --update'
+alias nxca='nix-channel --add'
+alias nxcr='nix-channel --remove'
+alias nx-build-upgrade="sudo nixos-rebuild boot --upgrade"
 #  General
 alias c="clear -x"
 alias gwm="cowsay god i wish that were me"

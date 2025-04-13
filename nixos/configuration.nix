@@ -1,12 +1,11 @@
 { config, pkgs, ... }:
-{
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.05"; # Did you read the comment?
+
+let
+  unstable = import (fetchTarball {
+    url = "https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz";
+  }) {};
+in {
+  system.stateVersion = "24.05";
 
   imports =
     [
@@ -14,18 +13,12 @@
       ./plasma.nix
     ];
 
-  # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
   boot.supportedFilesystems = [ "ntfs" ];
 
-  networking.hostName = "dgrdt1-nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+  networking.hostName = "dgrdt1-nixos";
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -69,12 +62,6 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -87,26 +74,22 @@
     ];
   };
 
-  programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [
-    # Add any missing dynamic libraries for unpackaged programs
-    # here, NOT in environment.systemPackages
-  ];
+  # Env vars
+  environment.sessionVariables.MY_OS = "NixOS";
+  environment.sessionVariables.EDITOR = "helix";
 
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
 
+  programs.zsh.promptInit = "eval \"$(starship init zsh)\"";
+
   programs.firefox.enable = true;
   programs.steam.enable = true;
 
-  # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
   environment.systemPackages = with pkgs; [
     bat
-    # clipman
     cliphist
     fuzzel
     fzf
@@ -132,8 +115,8 @@
     aseprite
     alacritty
     discord-ptb
-    godot_4
     google-chrome
+    unstable.godot
     lutris
     mpv
     pinta
@@ -144,10 +127,6 @@
     zoom-us
   ];
 
-  # programs.zsh.promptInit = "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
-  programs.zsh.promptInit = "eval \"$(starship init zsh)\"";
-
-
   fonts.packages = with pkgs; [
     # Don't pull in every nerdfont
     # https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts
@@ -156,27 +135,4 @@
         "Go-Mono"
     ];})
   ];
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
-
-  # Env vars
-  environment.sessionVariables.MY_OS = "NixOS";
-  environment.sessionVariables.EDITOR = "helix";
 }
