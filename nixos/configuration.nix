@@ -91,6 +91,7 @@ in {
   environment.systemPackages = with pkgs; [
     bat
     cliphist
+    ffmpeg
     fuzzel
     fzf
     git
@@ -107,6 +108,7 @@ in {
     udisks
     wget
     xclip
+    yt-dlp
     zoxide
     zsh
     zsh-powerlevel10k
