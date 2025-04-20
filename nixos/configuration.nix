@@ -73,7 +73,7 @@ in {
   users.users.dan = {
     isNormalUser = true;
     description = "Daniel Ramirez";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "docker" "networkmanager" "wheel" ];
     packages = with pkgs; [
     #  thunderbird
     ];
@@ -91,6 +91,8 @@ in {
   programs.firefox.enable = true;
   programs.steam.enable = true;
 
+  virtualisation.docker.enable = true;
+
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
@@ -105,12 +107,15 @@ in {
     home-manager
     mise
     neofetch
+    nodejs_22
     pulseaudioFull
+    python313
     rar
     rofi-wayland
     starship
     stow
     tmux
+    trashy
     udisks
     wget
     xclip
@@ -123,7 +128,9 @@ in {
     aseprite
     alacritty
     discord-ptb
+    docker
     google-chrome
+    # ghostty
     unstable.godot
     lutris
     mpv
