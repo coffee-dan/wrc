@@ -1,8 +1,13 @@
 { config, pkgs, ... }:
 
 let
-  unstable = import (fetchTarball {
-    url = "https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz";
+  unstable = import (pkgs.fetchFromGitHub {
+    # Give me Godot 4.4.1-stable
+    # https://github.com/NixOS/nixpkgs/commit/37ff82688737bab1fc6edaa739d498cff71a6200
+    owner = "NixOS";
+    repo = "nixpkgs";
+    rev = "37ff82688737bab1fc6edaa739d498cff71a6200";
+    hash = "sha256-FgSqfuHPxmkz3pvlYopBtV827LyDMoGdv2UMWQ9bKMw=";
   }) {};
 in {
   system.stateVersion = "24.05";
@@ -94,6 +99,7 @@ in {
     ffmpeg
     fuzzel
     fzf
+    gifsicle
     git
     helix
     home-manager

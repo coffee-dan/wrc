@@ -122,6 +122,16 @@ alias stetris="tetris && clear"
 alias zshrc="$EDITOR ~/.zshrc"
 alias opng="optipng -clobber -o7"
 
+function ffmpeg-webm-gif() {
+  local webm_filename="$1"
+  local gif_filename="$(basename "${webm_filename%.*}")"
+  ffmpeg -i "${webm_filename}" \
+          -vf "fps=10,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" \
+          -loop -1 \
+          "${gif_filename}.gif"
+  gifsicle --optimize=3 --output "${gif_filename}-optimized.gif" --resize-height 600 "${gif_filename}.gif"
+}
+
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 
 if command -v zoxide >/dev/null; then
