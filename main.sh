@@ -35,4 +35,5 @@ if [[ "$MY_OS" == "NixOS" ]]; then
 elif [[ "$MY_OS" == "MacOS" ]]; then
     export PATH="/opt/homebrew/bin:$PATH"
     brew install zoxide mise powerlevel10k starship
+    stow --target=$HOME/.config/mise --dir=mise macos
 fi
