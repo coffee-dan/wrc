@@ -17,6 +17,10 @@ if [[ "$MY_OS" == "MacOS" ]]; then
     source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme
   fi
 
+elif command -v pacman >/dev/null; then
+
+  eval "$(starship init zsh)"
+
 elif command -v apt-get >/dev/null; then
   # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
   # Initialization code that may require console input (password prompts, [y/n]
@@ -117,6 +121,7 @@ alias nx-build-upgrade="sudo nixos-rebuild boot --upgrade"
 alias c="clear -x"
 alias gwm="cowsay god i wish that were me"
 alias hfz="cat ~/.zsh_history | fzf"
+alias hx="helix"
 alias rsrc="source ~/.zshrc"
 alias stetris="tetris && clear"
 alias zshrc="$EDITOR ~/.zshrc"
