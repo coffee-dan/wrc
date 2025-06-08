@@ -124,6 +124,8 @@ alias pac-clean="sudo pacman -Scc"
 alias pac-remove="sudo pacman -Rcns"
 alias pac-orphans="pacman -Qdt"
 alias pac-list="pacman -Qe"
+#  Arch / Hyprland
+alias waybar-reload="pkill -SIGUSR2 waybar"
 #  General
 alias c="clear -x"
 alias gwm="cowsay god i wish that were me"
