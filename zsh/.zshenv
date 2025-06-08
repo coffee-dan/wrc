@@ -12,7 +12,8 @@ stash() {
 }
 
 PATH=$PATH:$HOME/go/bin
-PATH=$PATH:$HOME/.local/bin/
+PATH=$PATH:$HOME/.local/bin
+PATH=$PATH:$HOME/.dotnet/tools
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
   MY_OS="MacOS"

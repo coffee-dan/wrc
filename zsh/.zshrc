@@ -117,6 +117,13 @@ alias nxcu='sudo nix-channel --update'
 alias nxca='nix-channel --add'
 alias nxcr='nix-channel --remove'
 alias nx-build-upgrade="sudo nixos-rebuild boot --upgrade"
+#  Arch / Pacman
+alias pac-install="sudo pacman -S"
+alias pac-upgrade="sudo pacman -Syu"
+alias pac-clean="sudo pacman -Scc"
+alias pac-remove="sudo pacman -Rcns"
+alias pac-orphans="pacman -Qdt"
+alias pac-list="pacman -Qe"
 #  General
 alias c="clear -x"
 alias gwm="cowsay god i wish that were me"
