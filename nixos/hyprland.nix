@@ -12,5 +12,5 @@
         networkmanagerapplet
         blueman
         udiskie
-    ]
+    ];
 }

@@ -1,15 +1,5 @@
 { config, pkgs, ... }:
-
-let
-  unstable = import (pkgs.fetchFromGitHub {
-    # Give me Godot 4.4.1-stable
-    # https://github.com/NixOS/nixpkgs/commit/37ff82688737bab1fc6edaa739d498cff71a6200
-    owner = "NixOS";
-    repo = "nixpkgs";
-    rev = "37ff82688737bab1fc6edaa739d498cff71a6200";
-    hash = "sha256-FgSqfuHPxmkz3pvlYopBtV827LyDMoGdv2UMWQ9bKMw=";
-  }) {};
-in {
+{
   system.stateVersion = "24.05";
 
   imports =
@@ -59,8 +49,7 @@ in {
   hardware.bluetooth.enable = true;
 
   # Enable sound with pipewire.
-  sound.enable = true;
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -126,14 +115,17 @@ in {
     zsh
     zsh-powerlevel10k
 
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.go-mono
+
     _1password-gui
     aseprite
     alacritty
     discord-ptb
     docker
     flyctl
+    godot
     google-chrome
-    unstable.godot
     lutris
     mpv
     pinta
@@ -145,12 +137,4 @@ in {
   ];
 
   fonts.enableDefaultPackages = true;
-  fonts.packages = with pkgs; [
-    # Don't pull in every nerdfont
-    # https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts
-    (nerdfonts.override { fonts = [
-        "JetBrainsMono"
-        "Go-Mono"
-    ];})
-  ];
 }
