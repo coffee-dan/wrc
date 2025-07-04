@@ -103,21 +103,17 @@ in {
 
   environment.systemPackages = with pkgs; [
     bat
-    cliphist
     ffmpeg
-    fuzzel
     fzf
     gifsicle
     git
     helix
-    home-manager
     mise
     neofetch
     nodejs_22
     pulseaudioFull
     python313
     rar
-    rofi-wayland
     starship
     stow
     tmux
@@ -137,7 +133,6 @@ in {
     docker
     flyctl
     google-chrome
-    # ghostty
     unstable.godot
     lutris
     mpv
@@ -149,6 +144,7 @@ in {
     zoom-us
   ];
 
+  fonts.enableDefaultPackages = true;
   fonts.packages = with pkgs; [
     # Don't pull in every nerdfont
     # https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts
