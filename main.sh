@@ -17,7 +17,7 @@ mkdir -p ~/.config/nvim
 mkdir -p ~/.config/mise
 mkdir -p ~/.config/rofi
 mkdir -p ~/.config/starship
-sudo mkdir -p /etc/xdg/waybar
+mkdir -p ~/.config/waybar
 stow --target=$HOME/.config/alacritty alacritty
 stow --target=$HOME/.config/fuzzel fuzzel
 stow --target=$HOME/.config/ghostty ghostty
@@ -27,7 +27,7 @@ stow --target=$HOME/.config/kitty kitty
 stow --target=$HOME/.config/nvim nvim
 stow --target=$HOME/.config/rofi rofi
 stow --target=$HOME/.config/ starship
-sudo stow --target=/etc/xdg/waybar waybar
+stow --target=$HOME/.config/waybar waybar
 
 if [[ "$MY_OS" == "NixOS" ]]; then
     # If main configuration is not already a symlink

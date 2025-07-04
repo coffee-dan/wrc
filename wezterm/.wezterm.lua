@@ -42,6 +42,6 @@ if mod == "ALT" then
 	end
 end
 
-config.color_scheme = "Dracula (Gogh)"
+-- config.color_scheme = "Dracula (Gogh)"
 
 return config
