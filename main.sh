@@ -41,3 +41,9 @@ elif [[ "$MY_OS" == "MacOS" ]]; then
     brew install zoxide mise powerlevel10k starship
     stow --target=$HOME/.config/mise --dir=mise macos
 fi
+
+if [[ "$MY_SDDM" == "wayland-sessions" ]]; then
+    if [[ ! -L "/usr/share/wayland-sessions/hyprland.desktop" ]]; then
+        sudo stow --target=/usr/share/wayland-sessions --dir=sddm wayland-sessions
+    fi
+fi
