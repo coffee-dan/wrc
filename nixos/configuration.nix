@@ -5,7 +5,7 @@
   imports =
     [
       /etc/nixos/hardware-configuration.nix
-      ./plasma.nix
+      ./hyprland.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
@@ -91,7 +91,9 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
+    # CLI - Utils - Etc
     bat
+    docker
     ffmpeg
     fzf
     gifsicle
@@ -115,14 +117,15 @@
     zsh
     zsh-powerlevel10k
 
+    # Fonts
     nerd-fonts.jetbrains-mono
     nerd-fonts.go-mono
 
+    # GUI - Applications
     _1password-gui
     aseprite
     alacritty
     discord-ptb
-    docker
     flyctl
     godot
     google-chrome

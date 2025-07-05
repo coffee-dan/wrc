@@ -13,14 +13,22 @@
     programs.hyprland.enable = true;
 
     environment.systemPackages = with pkgs; [
+        # CLI - Utils - Etc
+        cliphist
+        hyprpaper
         hyprpolkitagent
+        udiskie
+        wl-clipboard
+
+        # Fonts
+        fira
+        font-awesome
+
+        # GUI - Applications
+        blueman
+        networkmanagerapplet
         swaynotificationcenter
         waybar
-        hyprpaper
-        cliphist
-        wl-clipboard
-        networkmanagerapplet
-        blueman
-        udiskie
+        wofi
     ];
 }

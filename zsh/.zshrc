@@ -109,6 +109,7 @@ alias rdpt="RAILS_ENV=test bundle exec rails db:seed:replant"
 alias rdr="RAILS_ENV=development bundle exec rails db:drop db:create db:schema:load db:seed:replant"
 alias rdp="RAILS_ENV=development bundle exec rails db:seed:replant"
 #  NixOS
+alias nx-build-upgrade="sudo nixos-rebuild boot --upgrade"
 alias nx-build="sudo nixos-rebuild boot"
 alias nx-switch="sudo nixos-rebuild switch"
 alias nx-rollback='sudo nixos-rebuild switch --rollback'
@@ -116,7 +117,7 @@ alias nxcl='sudo nix-channel --list'
 alias nxcu='sudo nix-channel --update'
 alias nxca='sudo nix-channel --add'
 alias nxcr='sudo nix-channel --remove'
-alias nx-build-upgrade="sudo nixos-rebuild boot --upgrade"
+alias nxgl="nixos-rebuild list-generations"
 #  Arch / Pacman
 alias pac-install="sudo pacman -S"
 alias pac-upgrade="sudo pacman -Syu"
