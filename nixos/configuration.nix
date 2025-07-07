@@ -105,6 +105,7 @@
     pulseaudioFull
     python313
     rar
+    sddm-astronaut
     starship
     stow
     tmux
@@ -127,6 +128,7 @@
     alacritty
     discord-ptb
     flyctl
+    font-manager
     godot
     google-chrome
     lutris

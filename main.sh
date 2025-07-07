@@ -18,6 +18,7 @@ mkdir -p ~/.config/mise
 mkdir -p ~/.config/rofi
 mkdir -p ~/.config/starship
 mkdir -p ~/.config/waybar
+mkdir -p ~/.config/wofi
 stow --target=$HOME/.config/alacritty alacritty
 stow --target=$HOME/.config/fuzzel fuzzel
 stow --target=$HOME/.config/ghostty ghostty
@@ -28,6 +29,7 @@ stow --target=$HOME/.config/nvim nvim
 stow --target=$HOME/.config/rofi rofi
 stow --target=$HOME/.config/ starship
 stow --target=$HOME/.config/waybar waybar
+stow --target=$HOME/.config/wofi wofi
 
 if [[ "$MY_OS" == "NixOS" ]]; then
     # If main configuration is not already a symlink
