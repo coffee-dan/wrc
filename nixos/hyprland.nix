@@ -20,15 +20,16 @@
         udiskie
         wl-clipboard
 
-        # Fonts
-        fira
-        font-awesome
-
         # GUI - Applications
         blueman
         networkmanagerapplet
         swaynotificationcenter
         waybar
         wofi
+    ];
+
+    fonts.packages = with pkgs; [
+        fira
+        font-awesome
     ];
 }

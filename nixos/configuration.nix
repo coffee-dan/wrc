@@ -118,10 +118,6 @@
     zsh
     zsh-powerlevel10k
 
-    # Fonts
-    nerd-fonts.jetbrains-mono
-    nerd-fonts.go-mono
-
     # GUI - Applications
     _1password-gui
     aseprite
@@ -139,6 +135,11 @@
     vscode
     wezterm
     zoom-us
+  ];
+
+  fonts.packages = with pkgs; [
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.go-mono
   ];
 
   fonts.enableDefaultPackages = true;
