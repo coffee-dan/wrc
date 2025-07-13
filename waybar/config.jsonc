@@ -1,6 +1,7 @@
 // Based on https://github.com/mylinuxforwork/hyprland-starter/tree/1.0.1
 {
-    "layer": "top",
+    // "layer": "top",
+    "height": 30,
     "margin-top": 10,
     "margin-bottom": 0,
     "margin-left": 10,
@@ -12,15 +13,13 @@
         "~/.config/waybar/modules.jsonc"
     ],
     "modules-left": [
-        "custom/appmenu",
         "hyprland/workspaces",
-        "group/quicklinks"
+        "hyprland/window"
     ],
-    // "modules-center": [
-    //     "hyprland/window"
-    // ],
+    "modules-center": [
+        "clock"
+    ],
     "modules-right": [
-        "mpd",
         "pulseaudio",
         "network",
         "cpu",
@@ -28,7 +27,6 @@
         "keyboard-state",
         "battery",
         "tray",
-        "custom/exit",
-        "clock"
+        "custom/exit"
     ]
 }
