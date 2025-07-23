@@ -93,6 +93,7 @@
   environment.systemPackages = with pkgs; [
     # CLI - Utils - Etc
     bat
+    bottom
     docker
     ffmpeg
     fzf
@@ -114,6 +115,7 @@
     wget
     xclip
     yt-dlp
+    zip
     zoxide
     zsh
     zsh-powerlevel10k
@@ -127,6 +129,7 @@
     font-manager
     godot
     google-chrome
+    heroic
     lutris
     mpv
     pinta

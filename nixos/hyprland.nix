@@ -22,6 +22,7 @@
 
         # GUI - Applications
         blueman
+        kdePackages.dolphin
         networkmanagerapplet
         swaynotificationcenter
         waybar
