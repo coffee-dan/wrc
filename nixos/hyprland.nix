@@ -17,16 +17,23 @@
         cliphist
         hyprpaper
         hyprpolkitagent
+        (sddm-astronaut.override { embeddedTheme = "cyberpunk"; })
         udiskie
         wl-clipboard
 
         # GUI - Applications
         blueman
-        kdePackages.dolphin
         networkmanagerapplet
         swaynotificationcenter
         waybar
         wofi
+
+        # KDE Ecosystem
+        kdePackages.dolphin           # file manager
+        kdePackages.gwenview          # image viewer
+        kdePackages.okular            # document viewer (pdf)
+        kdePackages.plasma-workspace  # "Various components needed to run a Plasma-based environment"
+        kdePackages.qtsvg             # support for svg icons
     ];
 
     fonts.packages = with pkgs; [

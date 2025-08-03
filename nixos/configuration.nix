@@ -6,6 +6,7 @@
     [
       /etc/nixos/hardware-configuration.nix
       ./hyprland.nix
+      ./work.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
@@ -66,6 +67,18 @@
     packages = with pkgs; [
     #  thunderbird
     ];
+  };
+
+  xdg.mime.defaultApplications = {
+    "application/pdf" = "okular.desktop";
+    "audio/webm"      = "mpv.desktop";
+    "image/gif"       = "gwenview.desktop";
+    "image/jpeg"      = "gwenview.desktop";
+    "image/jpg"       = "gwenview.desktop";
+    "image/png"       = "gwenview.desktop";
+    "image/svg+xml"   = "gwenview.desktop";
+    "image/webp"      = "gwenview.desktop";
+    "video/webm"      = "mpv.desktop";
   };
 
   programs.nix-ld.enable = true;
