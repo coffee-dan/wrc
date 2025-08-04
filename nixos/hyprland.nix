@@ -14,15 +14,22 @@
 
     environment.systemPackages = with pkgs; [
         # CLI - Utils - Etc
+        brightnessctl       # laptop brightness control
         cliphist
         hyprpaper
         hyprpolkitagent
-        (sddm-astronaut.override { embeddedTheme = "cyberpunk"; })
+        playerctl           # media player control
+        ( sddm-astronaut.override
+            { embeddedTheme = "cyberpunk"; }
+        )
         udiskie
         wl-clipboard
 
         # GUI - Applications
         blueman
+        ( flameshot.override
+            { enableWlrSupport = true; }
+        )
         networkmanagerapplet
         swaynotificationcenter
         waybar

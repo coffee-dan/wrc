@@ -148,6 +148,7 @@
     pinta
     protonvpn-gui
     steam
+    sublime4
     vscode
     wezterm
     zoom-us
