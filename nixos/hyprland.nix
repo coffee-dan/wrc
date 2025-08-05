@@ -38,6 +38,7 @@
         # KDE Ecosystem
         kdePackages.dolphin           # file manager
         kdePackages.gwenview          # image viewer
+        kdePackages.kate              # text editor
         kdePackages.okular            # document viewer (pdf)
         kdePackages.plasma-workspace  # "Various components needed to run a Plasma-based environment"
         kdePackages.qtsvg             # support for svg icons

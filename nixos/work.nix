@@ -5,4 +5,8 @@
     environment.systemPackages = with pkgs; [
         slack
     ];
+
+    networking.hosts = {
+        "127.0.0.1" = [ "keycloak.local" ];
+    };
 }

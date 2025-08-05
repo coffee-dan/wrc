@@ -125,6 +125,7 @@
     tmux
     trashy
     udisks
+    unzip
     wget
     xclip
     yt-dlp
@@ -148,7 +149,6 @@
     pinta
     protonvpn-gui
     steam
-    sublime4
     vscode
     wezterm
     zoom-us
