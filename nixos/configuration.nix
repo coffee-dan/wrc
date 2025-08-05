@@ -14,6 +14,10 @@
 
   boot.supportedFilesystems = [ "ntfs" ];
 
+  # Env vars
+  environment.sessionVariables.MY_OS = "NixOS";
+  environment.sessionVariables.EDITOR = "helix";
+
   networking.hostName = "dgrdt1-nixos";
   networking.networkmanager.enable = true;
 
@@ -56,7 +60,6 @@
     pulse.enable = true;
   };
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.dan = {
     isNormalUser = true;
     description = "Daniel Ramirez";
@@ -65,6 +68,7 @@
     #  thunderbird
     ];
   };
+  users.defaultUserShell = pkgs.zsh;
 
   xdg.mime.defaultApplications = {
     "application/pdf" = "okular.desktop";
@@ -78,14 +82,16 @@
     "video/webm"      = "mpv.desktop";
   };
 
-  # Env vars
-  environment.sessionVariables.MY_OS = "NixOS";
-  environment.sessionVariables.EDITOR = "helix";
-
   programs.zsh.enable = true;
-  users.defaultUserShell = pkgs.zsh;
-
   programs.zsh.promptInit = "eval \"$(starship init zsh)\"";
+
+  # Needed for dynamically linked programs that were intended for use on standard linux distros.
+  # ex: binaries installed by mise
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    # Add any missing dynamic libraries for unpackaged programs
+    # here, NOT in environment.systemPackages
+  ];
 
   programs.firefox.enable = true;
   programs.steam.enable = true;
