@@ -15,11 +15,8 @@
   boot.supportedFilesystems = [ "ntfs" ];
 
   networking.hostName = "dgrdt1-nixos";
-
-  # Enable networking
   networking.networkmanager.enable = true;
 
-  # Set your time zone.
   time.timeZone = "America/Chicago";
 
   # Select internationalisation properties.
@@ -81,12 +78,6 @@
     "video/webm"      = "mpv.desktop";
   };
 
-  programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [
-    # Add any missing dynamic libraries for unpackaged programs
-    # here, NOT in environment.systemPackages
-  ];
-
   # Env vars
   environment.sessionVariables.MY_OS = "NixOS";
   environment.sessionVariables.EDITOR = "helix";
@@ -119,6 +110,7 @@
     pulseaudioFull
     python313
     rar
+    ripgrep
     sddm-astronaut
     starship
     stow
@@ -154,10 +146,9 @@
     zoom-us
   ];
 
+  fonts.enableDefaultPackages = true;
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
     nerd-fonts.go-mono
   ];
-
-  fonts.enableDefaultPackages = true;
 }
