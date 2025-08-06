@@ -2,10 +2,7 @@
 {
     // "layer": "top",
     "height": 30,
-    "margin-top": 10,
-    "margin-bottom": 0,
-    "margin-left": 10,
-    "margin-right": 10,
+    "margin": 0,
     "spacing": 0,
 
     // Load Modules

@@ -157,22 +157,22 @@ window#waybar.empty #window {
 /* Custom Modules */
 
 #custom-appmenu {
-    background-color: @backgrounddark;
-    color: @textcolor1;
     border-radius: 5px 5px 5px 5px;
     padding: 0px 10px 0px 10px;
     margin: 2px 17px 2px 0px;
-    opacity:1.0;
-    border:3px solid @bordercolor;
+    opacity: 1.0;
+    border: 3px solid @bordercolor;
+    color: @textcolor1;
+    background-color: @backgrounddark;
 }
 
 #custom-notification,
 #custom-exit {
     margin: 0px 13px 0px 0px;
-    padding:0px;
-    font-size:20px;
-    color: @iconcolor;
+    padding: 0px;
+    font-size: 16px;
     opacity: 0.8;
+    color: @textcolor1;
 }
 
 /* Custom Updates */
@@ -203,10 +203,10 @@ window#waybar.empty #window {
 
 /* Hardware Group */
 
-#disk,#memory,#cpu,#language {
-    margin:0px 10px 0px 0px;
-    padding:0px;
-    color:@iconcolor;
+#disk, #memory, #cpu, #language {
+    margin: 0px 10px 0px 0px;
+    padding: 0px;
+    color: @textcolor1;
 }
 
 #language {
@@ -218,7 +218,7 @@ window#waybar.empty #window {
 #power-profiles-daemon {
     margin: 0px 13px 0px 0px;
     padding:0px;
-    color:@iconcolor;
+    color: @textcolor1;
 }
 
 /* Clock */
