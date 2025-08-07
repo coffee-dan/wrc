@@ -13,17 +13,14 @@
         "hyprland/workspaces",
         "hyprland/window"
     ],
-    "modules-center": [
-        "clock"
-    ],
+    // "modules-center": [
+    // ],
     "modules-right": [
         "pulseaudio",
-        "network",
-        "cpu",
         "memory",
         "keyboard-state",
         "battery",
         "tray",
-        "custom/exit"
+        "clock"
     ]
 }

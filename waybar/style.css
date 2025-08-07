@@ -51,7 +51,7 @@ window#waybar.hidden {
 
 #workspaces {
     background-color: transparent;
-    margin: 2px 18px 3px 1px;
+    margin: 3px 0px 3px 1px;
     padding: 0px 2px;
     border-radius: 5px;
 }
@@ -93,8 +93,8 @@ tooltip label {
 /* Window */
 
 #window {
-    margin: 3px 15px 3px 0px;
-    padding: 2px 10px 0px 10px;
+    margin: 5px;
+    padding: 2px 10px;
     border-radius: 5px 5px 5px 5px;
 
     background: @bg-primary;
@@ -204,7 +204,7 @@ window#waybar.empty #window {
 /* Hardware Group */
 
 #disk, #memory, #cpu, #language {
-    margin: 0px 10px 0px 0px;
+    margin: 0px;
     padding: 0px;
     color: @textcolor1;
 }
@@ -224,13 +224,10 @@ window#waybar.empty #window {
 /* Clock */
 
 #clock {
-    background-color: @backgrounddark;
-    color: @textcolor1;
     border-radius: 3px 5px 3px 5px;
-    padding: 1px 10px 0px 10px;
     margin: 3px 10px 3px 0px;
-    opacity:1.0;
-    border:3px solid @bordercolor;
+    opacity: 1.0;
+    color: @textcolor1;
 }
 
 /* Backlight */
@@ -303,17 +300,9 @@ window#waybar.empty #window {
 /* Battery */
 
 #battery {
-    background-color: @backgroundlight;
-    color: @textcolor2;
     border-radius: 5px 5px 5px 5px;
     padding: 2px 15px 0px 10px;
-    margin: 3px 15px 3px 0px;
-    opacity:1.0;
-}
-
-#battery.charging, #battery.plugged {
     color: @textcolor2;
-    background-color: @backgroundlight;
 }
 
 @keyframes blink {
