@@ -107,6 +107,7 @@
     docker
     ffmpeg
     fzf
+    gh
     gifsicle
     git
     helix
