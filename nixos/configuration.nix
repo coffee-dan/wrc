@@ -44,8 +44,20 @@
     variant = "";
   };
 
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
+  # Enable autodiscovery of network printers:
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+  };
+  services.printing = {
+    # Enable CUPS to print documents.
+    enable = true;
+    drivers = with pkgs; [
+      cups-filters
+      cups-browsed
+    ];
+  };
 
   # Not sure if required...
   hardware.bluetooth.enable = true;
@@ -70,17 +82,8 @@
   };
   users.defaultUserShell = pkgs.zsh;
 
-  xdg.mime.defaultApplications = {
-    "application/pdf" = "okular.desktop";
-    "audio/webm"      = "mpv.desktop";
-    "image/gif"       = "gwenview.desktop";
-    "image/jpeg"      = "gwenview.desktop";
-    "image/jpg"       = "gwenview.desktop";
-    "image/png"       = "gwenview.desktop";
-    "image/svg+xml"   = "gwenview.desktop";
-    "image/webp"      = "gwenview.desktop";
-    "video/webm"      = "mpv.desktop";
-  };
+  xdg.mime.enable = true;
+  xdg.menus.enable = true;
 
   programs.zsh.enable = true;
   programs.zsh.promptInit = "eval \"$(starship init zsh)\"";
