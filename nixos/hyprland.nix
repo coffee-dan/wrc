@@ -18,6 +18,10 @@
         hyprpaper
         hyprpolkitagent
         playerctl           # media player control
+        # TODO add system.userActivationScripts to move installed theme into correct directory
+        # - [ ] rose pine (breezeX ish) cursor
+        # - [ ] login theme sddm-astronaut
+        rose-pine-hyprcursor
         ( sddm-astronaut.override
             { embeddedTheme = "cyberpunk"; }
         )

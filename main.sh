@@ -8,6 +8,7 @@ stow vim
 stow wezterm
 stow zsh
 mkdir -p ~/.config/alacritty
+mkdir -p ~/.config/flameshot
 mkdir -p ~/.config/fuzzel
 mkdir -p ~/.config/ghostty
 mkdir -p ~/.config/helix
@@ -20,6 +21,7 @@ mkdir -p ~/.config/starship
 mkdir -p ~/.config/waybar
 mkdir -p ~/.config/wofi
 stow --target=$HOME/.config/alacritty alacritty
+stow --target=$HOME/.config/flameshot flameshot
 stow --target=$HOME/.config/fuzzel fuzzel
 stow --target=$HOME/.config/ghostty ghostty
 stow --target=$HOME/.config/helix helix
@@ -42,10 +44,4 @@ elif [[ "$MY_OS" == "MacOS" ]]; then
     export PATH="/opt/homebrew/bin:$PATH"
     brew install zoxide mise powerlevel10k starship
     stow --target=$HOME/.config/mise --dir=mise macos
-fi
-
-if [[ "$MY_SDDM" == "wayland-sessions" ]]; then
-    if [[ ! -L "/usr/share/wayland-sessions/hyprland.desktop" ]]; then
-        sudo stow --target=/usr/share/wayland-sessions --dir=sddm wayland-sessions
-    fi
 fi

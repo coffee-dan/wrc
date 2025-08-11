@@ -140,6 +140,7 @@
     _1password-gui
     aseprite
     alacritty
+    dbeaver-bin
     discord-ptb
     flyctl
     font-manager
