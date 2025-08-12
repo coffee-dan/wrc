@@ -9,6 +9,7 @@
     services.displayManager.sddm = {
         enable = true;
         wayland.enable = true;
+        theme = "cyberpunk";
     };
 
     environment.systemPackages = with pkgs; [
@@ -19,8 +20,7 @@
         hyprpolkitagent
         playerctl           # media player control
         # TODO add system.userActivationScripts to move installed theme into correct directory
-        # - [ ] rose pine (breezeX ish) cursor
-        # - [ ] login theme sddm-astronaut
+        # - [ maybe? ] login theme sddm-astronaut
         rose-pine-hyprcursor
         ( sddm-astronaut.override
             { embeddedTheme = "cyberpunk"; }
@@ -62,6 +62,15 @@
 
     environment.etc."/xdg/menus/applications.menu".text = builtins.readFile
         "${pkgs.kdePackages.plasma-workspace}/etc/xdg/menus/plasma-applications.menu";
+
+    # These scripts run during nixos-rebuild boot, nixos-rebuild switch,
+    # and login. Thus they must be quick and idempotent
+    system.userActivationScripts = {
+        my-hyprcursor-theme = ''
+            mkdir -p $HOME/.local/share/icons
+            ln -sf ${pkgs.rose-pine-hyprcursor}/share/icons/rose-pine-hyprcursor $HOME/.local/share/icons/rose-pine-hyprcursor
+        '';
+    };
 
     fonts.packages = with pkgs; [
         fira
