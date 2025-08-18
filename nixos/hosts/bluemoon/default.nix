@@ -22,7 +22,7 @@
   environment.sessionVariables.MY_OS = "NixOS";
   environment.sessionVariables.EDITOR = "helix";
 
-  networking.hostName = "dgrdt1-nixos";
+  networking.hostName = "bluemoon";
   networking.networkmanager.enable = true;
 
   time.timeZone = "America/Chicago";

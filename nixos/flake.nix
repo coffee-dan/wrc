@@ -17,7 +17,7 @@
         inherit system;
         specialArgs = { inherit inputs; };
         modules = [
-          ./hosts/${hostname}/default.nix
+          ./hosts/${hostname}
         ];
       };
 
@@ -36,13 +36,18 @@
     nixosConfigurations = {
       # General and Personal Desktop
       dgrdt1-nixos = mkHost {
-        hostname = "dgrdt1-nixos";
+        hostname = "bluemoon";
+        system = "x86_64-linux";
+      };
+
+      bluemoon = mkHost {
+        hostname = "bluemoon";
         system = "x86_64-linux";
       };
 
       # Work laptop
-      dgr-work-lt1 = mkHost {
-        hostname = "dgr-work-lt1";
+      capra = mkHost {
+        hostname = "capra";
         system = "x86_64-linux";
       };
 

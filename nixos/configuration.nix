@@ -5,5 +5,5 @@
 { config, pkgs, inputs, ... }:
 {
   # Import the host configuration for nixchan
-  imports = [ ./hosts/dgrdt1-nixos ];
+  imports = [ ./hosts/bluemoon ];
 }
