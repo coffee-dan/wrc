@@ -35,15 +35,14 @@
   in {
     nixosConfigurations = {
       # General and Personal Desktop
-      dgrdt1-nixos = mkHost {
-        hostname = "bluemoon";
-        system = "x86_64-linux";
-      };
-
       bluemoon = mkHost {
         hostname = "bluemoon";
         system = "x86_64-linux";
       };
+      # Placeholder cause system keeps erroring when this is gone
+      # TODO: find out how to remove this for good
+      dgrdt1-nixos = mkHost { hostname = "bluemoon"; };
+
 
       # Work laptop
       capra = mkHost {

@@ -7,8 +7,8 @@
 - `flake.nix` - The entry point for the NixOS configuration
 - `hosts/` - Host-specific configurations
   - `common/` - Common configuration for all hosts
-  - `nixchan/` - Configuration for the nixchan laptop
-  - `hina/` - Configuration for the hina desktop (AMD 7700 + NVIDIA 4070)
+  - `bluemoon/` - Configuration for the bluemoon desktop
+  - `capra/` - Configuration for the capra laptop (work)
 - `modules/` - Reusable NixOS modules
   - `core/` - Core system settings
   - `desktop/` - Desktop environment configurations
@@ -32,8 +32,8 @@ To add a new host:
 
 Each host has its own hardware configuration file in its directory:
 
-- `hosts/nixchan/hardware-configuration.nix` for the nixchan laptop
-- `hosts/hina/hardware-configuration.nix` for the hina desktop (placeholder until you set up the machine)
+- `hosts/bluemoon/hardware-configuration.nix` for the bluemoon desktop
+- `hosts/capra/hardware-configuration.nix` for the capra desktop (missing until you set up the machine)
 
 > **Note:** The `hardware-configuration.nix` file in the root directory is redundant in this modular setup. Each host should have its own hardware configuration in its respective directory.
 
@@ -57,8 +57,8 @@ Example:
 # In flake.nix
 nixosConfigurations = {
   # Existing hosts
-  nixchan = mkHost {
-    hostname = "nixchan";
+  bluemoon = mkHost {
+    hostname = "bluemoon";
     system = "x86_64-linux";
   };
 
@@ -91,7 +91,7 @@ sudo ln -s /home/quiet/Documents/nixos /etc/nixos
 3. Make sure the hostname is set correctly:
 
 ```bash
-hostname > /etc/hostname  # Replace 'hostname' with 'nixchan' or 'hina'
+hostname > /etc/hostname  # Replace 'hostname' with 'bluemoon' or 'capra'
 ```
 
 ### Building and Activating
@@ -110,10 +110,10 @@ If you want to explicitly specify a host:
 sudo nixos-rebuild switch --flake .#hostname
 ```
 
-For example, to build and activate the nixchan configuration:
+For example, to build and activate the bluemoon configuration:
 
 ```bash
-sudo nixos-rebuild switch --flake .#nixchan
+sudo nixos-rebuild switch --flake .#bluemoon
 ```
 
 ## Updating
@@ -125,36 +125,11 @@ nix flake update
 sudo nixos-rebuild switch
 ```
 
-## Dotfile Management
-
-This configuration includes [chezmoi](https://www.chezmoi.io/) for managing dotfiles across multiple machines. Chezmoi helps you manage your personal configuration files (dotfiles) across multiple machines in a secure and organized way.
-
-To get started with chezmoi:
-
-```bash
-# Initialize chezmoi with your dotfiles repository
-chezmoi init https://github.com/yourusername/dotfiles.git
-
-# See what changes chezmoi would make
-chezmoi diff
-
-# Apply the changes
-chezmoi apply
-```
-
-You can also use the alias set up in your zsh configuration:
-
-```bash
-nixgit
-```
-
-Which runs the script at `~/.config/hypr/scripts/chezmoi.sh`.
-
 ## Hyprland Configuration
 
 This setup installs Hyprland and related packages but does not manage the Hyprland configuration. You should manage your Hyprland configuration manually in your home directory (typically `~/.config/hypr/`).
 
-For NVIDIA GPUs (hina), you might want to add these environment variables to your Hyprland configuration:
+For NVIDIA GPUs (capra), you might want to add these environment variables to your Hyprland configuration:
 
 ```
 env = LIBVA_DRIVER_NAME,nvidia
@@ -164,7 +139,7 @@ env = __GLX_VENDOR_LIBRARY_NAME,nvidia
 env = WLR_NO_HARDWARE_CURSORS,1
 ```
 
-For Intel GPUs (nixchan), you might want to add these environment variables:
+For Intel GPUs (bluemoon), you might want to add these environment variables:
 
 ```
 env = LIBVA_DRIVER_NAME,iHD
