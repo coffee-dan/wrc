@@ -1,17 +1,18 @@
-{ config, pkgs, ... }:
+{ config, pkgs, system, inputs, ... }:
 {
   system.stateVersion = "24.05";
 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   imports =
     [
-      /etc/nixos/hardware-configuration.nix
+      ./hardware-configuration.nix
       ./hyprland.nix
       ./work.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-
   boot.supportedFilesystems = [ "ntfs" ];
 
   # Env vars
@@ -25,7 +26,6 @@
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
-
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_US.UTF-8";
     LC_IDENTIFICATION = "en_US.UTF-8";
@@ -63,8 +63,8 @@
   hardware.bluetooth.enable = true;
 
   # Enable sound with pipewire.
-  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
+  services.pulseaudio.enable = false;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -155,6 +155,7 @@
     vscode
     wezterm
     zoom-us
+    inputs.zen-browser.packages.x86_64-linux.default
   ];
 
   fonts.enableDefaultPackages = true;
