@@ -37,6 +37,7 @@ if [[ "$MY_OS" == "NixOS" ]]; then
     # If main configuration is not already a symlink
     # - This is just to avoid sudo password check
     if [[ ! -L "/etc/nixos/configuration.nix" ]]; then
+        sudo mkdir -p /etc/nixos
         sudo stow --target=/etc/nixos nixos
     fi
     stow --target=$HOME/.config/mise --dir=mise nixos

@@ -40,8 +40,10 @@
 
         # KDE Ecosystem
         kdePackages.dolphin           # file manager
+        kdePackages.ffmpegthumbs      # thumbnail creator for video files
         kdePackages.gwenview          # image viewer
         kdePackages.kate              # text editor
+        kdePackages.kde-cli-tools     # Tools based on KDE Frameworks 5; including keditfiletype
         kdePackages.okular            # document viewer (pdf)
         kdePackages.plasma-workspace  # "Various components needed to run a Plasma-based environment"
         kdePackages.qtsvg             # support for svg icons

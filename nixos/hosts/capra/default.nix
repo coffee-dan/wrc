@@ -130,6 +130,7 @@
     stow
     tmux
     trashy
+    tree
     udisks
     unzip
     wget
