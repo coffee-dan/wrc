@@ -12,6 +12,11 @@
         theme = "cyberpunk";
     };
 
+    # Fix for file type association menu in standalone dolphin
+    # TODO: test if actually needed
+    xdg.mime.enable = true;
+    xdg.menus.enable = true;
+
     environment.systemPackages = with pkgs; [
         # CLI - Utils - Etc
         brightnessctl       # laptop brightness control

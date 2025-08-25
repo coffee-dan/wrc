@@ -10,7 +10,7 @@
   #   stateVersion determines the NixOS release from which the default
   #   settings for stateful data, like file locations and datbase versions
   #   on your system were taken.
-  system.stateVersion = "24.05";
+  system.stateVersion = lib.mkDefault "24.05";
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   #   Allow unfree packages by default (can be override)
   nixpkgs.config.allowUnfree = lib.mkDefault true;
@@ -46,6 +46,31 @@
     variant = "";
   };
 
+  # https://nixos.wiki/wiki/Bluetooth
+  hardware.bluetooth.enable = true;
+
+  # Enable sound with pipewire.
+  security.rtkit.enable = true;
+  services.pulseaudio.enable = false;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+  };
+
+  users.users.dan = {
+    isNormalUser = true;
+    description = "Daniel Ramirez";
+    # TODO: determine if these groups can be defined in /hosts/<host>.nix
+    # - this may be needed for groups that only exist based on config (ex: docker, networkmanager)
+    # - this may not be needed in add an extragroup with no meaning is fine (ex: foobar)
+    extraGroups = [ "docker" "networkmanager" "wheel" ];
+    packages = with pkgs; [
+    #  thunderbird
+    ];
+  };
+
   # Default shell configuration
   environment.shells = with pkgs; [ zsh ];
   users.defaultUserShell = pkgs.zsh;
@@ -54,24 +79,51 @@
     promptInit = "eval \"$(starship init zsh)\"";
   };
 
-  # Basic packages, limit to small CLI tools
+  # Needed for dynamically linked programs that were intended for use on standard linux distros.
+  # ex: binaries installed by mise
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    # Add any missing dynamic libraries for unpackaged programs
+    # here, NOT in environment.systemPackages
+  ];
+
+  programs.firefox.enable = true;
+
+  # Basic packages used by all hosts (should be lightweight)
   environment.systemPackages = with pkgs; [
+    # CLI - Utils - Etc
     bat
     bottom
+    ffmpeg
     fzf
+    gh
     git
     helix
+    mise
+    neofetch
+    # TODO: determine if this is needed
+    pulseaudioFull
     rar
     ripgrep
     starship
     stow
     trashy
     tree
+    udisks
     unzip
     wget
     zip
     zoxide
     zsh
+
+    # GUI - Applications
+    _1password-gui
+    discord-ptb
+    mpv
+    pinta
+    protonvpn-gui
+    vscode
+    wezterm
   ];
 
   fonts.enableDefaultPackages = true;
