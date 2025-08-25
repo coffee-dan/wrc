@@ -64,4 +64,10 @@
     zoxide
     zsh
   ];
+
+  fonts.enableDefaultPackages = true;
+  fonts.packages = with pkgs; [
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.go-mono
+  ];
 }

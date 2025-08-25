@@ -65,7 +65,6 @@
   ];
 
   programs.firefox.enable = true;
-  programs.steam.enable = true;
 
   virtualisation.docker.enable = true;
 
@@ -92,7 +91,6 @@
 
     # GUI - Applications
     _1password-gui
-    alacritty
     dbeaver-bin
     discord-ptb
     font-manager
@@ -100,15 +98,8 @@
     mpv
     pinta
     protonvpn-gui
-    steam
     vscode
     wezterm
     inputs.zen-browser.packages.x86_64-linux.default
-  ];
-
-  fonts.enableDefaultPackages = true;
-  fonts.packages = with pkgs; [
-    nerd-fonts.jetbrains-mono
-    nerd-fonts.go-mono
   ];
 }

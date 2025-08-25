@@ -9,6 +9,7 @@
       # TODO: split out gaming, printing, development, office tools
       ../../modules/core.nix
       ../../modules/hyprland.nix
+      ../../modules/gaming.nix
     ];
 
   networking.hostName = "bluemoon";
@@ -65,7 +66,6 @@
   ];
 
   programs.firefox.enable = true;
-  programs.steam.enable = true;
 
   virtualisation.docker.enable = true;
 
@@ -92,28 +92,18 @@
     # GUI - Applications
     _1password-gui
     aseprite
-    alacritty
     dbeaver-bin
     discord-ptb
     flyctl
     font-manager
     godot
     google-chrome
-    heroic
-    lutris
     mpv
     pinta
     protonvpn-gui
-    steam
     vscode
     wezterm
     zoom-us
     inputs.zen-browser.packages.x86_64-linux.default
-  ];
-
-  fonts.enableDefaultPackages = true;
-  fonts.packages = with pkgs; [
-    nerd-fonts.jetbrains-mono
-    nerd-fonts.go-mono
   ];
 }
