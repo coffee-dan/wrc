@@ -6,29 +6,19 @@
       ./hardware-configuration.nix
 
       # Include building blocks for specific stuff
-      # TODO: split out gaming, printing, development, office tools
+      # TODO: split out development
       ../../modules/core.nix
       ../../modules/hyprland.nix
-      ../../modules/work.nix
     ];
 
   networking.hostName = "capra";
-  networking.networkmanager.enable = true;
+  networking.hosts = {
+    "127.0.0.1" = [ "keycloak.local" ];
+  };
 
-  # Enable autodiscovery of network printers:
-  services.avahi = {
-    enable = true;
-    nssmdns4 = true;
-    openFirewall = true;
-  };
-  services.printing = {
-    # Enable CUPS to print documents.
-    enable = true;
-    drivers = with pkgs; [
-      cups-filters
-      cups-browsed
-    ];
-  };
+  # Might be needed for Slack to work properly with Wayland
+  # TODO: test if still needed
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   # Not sure if required...
   hardware.bluetooth.enable = true;
@@ -54,8 +44,6 @@
   xdg.mime.enable = true;
   xdg.menus.enable = true;
 
-  programs.zsh.promptInit = "eval \"$(starship init zsh)\"";
-
   # Needed for dynamically linked programs that were intended for use on standard linux distros.
   # ex: binaries installed by mise
   programs.nix-ld.enable = true;
@@ -68,21 +56,20 @@
 
   virtualisation.docker.enable = true;
 
-  nixpkgs.config.allowUnfree = true;
-
   environment.systemPackages = with pkgs; [
     # CLI - Utils - Etc
     docker
+    dotnet-sdk
     ffmpeg
     gh
     gifsicle
+    libreoffice-fresh
     mise
     neofetch
     nodejs_22
     pulseaudioFull
     python313
-    sddm-astronaut
-    starship
+    slack
     tmux
     trashy
     udisks

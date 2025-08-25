@@ -6,29 +6,15 @@
       ./hardware-configuration.nix
 
       # Include building blocks for specific stuff
-      # TODO: split out gaming, printing, development, office tools
+      # TODO: split out development
       ../../modules/core.nix
       ../../modules/hyprland.nix
       ../../modules/gaming.nix
+      ../../modules/development/godot-workflow.nix
+      ../../modules/services/printing.nix
     ];
 
   networking.hostName = "bluemoon";
-  networking.networkmanager.enable = true;
-
-  # Enable autodiscovery of network printers:
-  services.avahi = {
-    enable = true;
-    nssmdns4 = true;
-    openFirewall = true;
-  };
-  services.printing = {
-    # Enable CUPS to print documents.
-    enable = true;
-    drivers = with pkgs; [
-      cups-filters
-      cups-browsed
-    ];
-  };
 
   # Not sure if required...
   hardware.bluetooth.enable = true;
@@ -55,8 +41,6 @@
   xdg.mime.enable = true;
   xdg.menus.enable = true;
 
-  programs.zsh.promptInit = "eval \"$(starship init zsh)\"";
-
   # Needed for dynamically linked programs that were intended for use on standard linux distros.
   # ex: binaries installed by mise
   programs.nix-ld.enable = true;
@@ -69,8 +53,6 @@
 
   virtualisation.docker.enable = true;
 
-  nixpkgs.config.allowUnfree = true;
-
   environment.systemPackages = with pkgs; [
     # CLI - Utils - Etc
     docker
@@ -82,8 +64,6 @@
     nodejs_22
     pulseaudioFull
     python313
-    sddm-astronaut
-    starship
     tmux
     udisks
     xclip
@@ -91,19 +71,16 @@
 
     # GUI - Applications
     _1password-gui
-    aseprite
     dbeaver-bin
     discord-ptb
-    flyctl
     font-manager
-    godot
     google-chrome
     mpv
     pinta
     protonvpn-gui
     vscode
     wezterm
-    zoom-us
+    # zoom-us
     inputs.zen-browser.packages.x86_64-linux.default
   ];
 }

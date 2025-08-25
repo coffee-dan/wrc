@@ -15,6 +15,11 @@
   #   Allow unfree packages by default (can be override)
   nixpkgs.config.allowUnfree = lib.mkDefault true;
 
+  # Use NetworkManager for obtaining an IP address and managing all
+  # network interfaces. Also creates a group networkmanager that
+  # membership of decides which users can manage network settings.
+  # (Can be overridden by specific hosts)
+  networking.networkmanager.enable = lib.mkDefault true;
 
   # Env vars
   environment.sessionVariables.MY_OS = "NixOS";
@@ -44,7 +49,10 @@
   # Default shell configuration
   environment.shells = with pkgs; [ zsh ];
   users.defaultUserShell = pkgs.zsh;
-  programs.zsh.enable = true;
+  programs.zsh = {
+    enable = true;
+    promptInit = "eval \"$(starship init zsh)\"";
+  };
 
   # Basic packages, limit to small CLI tools
   environment.systemPackages = with pkgs; [
@@ -55,6 +63,7 @@
     helix
     rar
     ripgrep
+    starship
     stow
     trashy
     tree
