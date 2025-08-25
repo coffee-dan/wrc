@@ -1,3 +1,5 @@
+# Consider reference Framework Laptop 16 guide if issues arise:
+# https://wiki.nixos.org/wiki/Hardware/Framework/Laptop_16
 { config, pkgs, inputs, ... }:
 {
   imports =
