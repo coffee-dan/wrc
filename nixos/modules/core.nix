@@ -105,6 +105,7 @@
     pulseaudioFull
     rar
     ripgrep
+    sherlock-launcher
     starship
     stow
     trashy

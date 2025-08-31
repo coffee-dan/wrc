@@ -1,37 +1,37 @@
 #!/usr/bin/env bash
 
-stow bash
-stow irb
-stow login
-stow tmux
-stow vim
-stow wezterm
-stow zsh
-mkdir -p ~/.config/alacritty
-mkdir -p ~/.config/flameshot
-mkdir -p ~/.config/fuzzel
-mkdir -p ~/.config/ghostty
-mkdir -p ~/.config/helix
-mkdir -p ~/.config/hypr
-mkdir -p ~/.config/kitty
-mkdir -p ~/.config/nvim
-mkdir -p ~/.config/mise
-mkdir -p ~/.config/rofi
-mkdir -p ~/.config/starship
-mkdir -p ~/.config/waybar
-mkdir -p ~/.config/wofi
-stow --target=$HOME/.config/alacritty alacritty
-stow --target=$HOME/.config/flameshot flameshot
-stow --target=$HOME/.config/fuzzel fuzzel
-stow --target=$HOME/.config/ghostty ghostty
-stow --target=$HOME/.config/helix helix
-stow --target=$HOME/.config/hypr hypr
-stow --target=$HOME/.config/kitty kitty
-stow --target=$HOME/.config/nvim nvim
-stow --target=$HOME/.config/rofi rofi
-stow --target=$HOME/.config/ starship
-stow --target=$HOME/.config/waybar waybar
-stow --target=$HOME/.config/wofi wofi
+function safe-stow() {
+    local package="$1"
+    local target="$2"
+
+    if [ -z "$target" ]; then
+        stow $package
+    else
+        mkdir -p $target
+        stow --target=$target $package
+    fi
+}
+
+safe-stow bash
+safe-stow irb
+safe-stow login
+safe-stow tmux
+safe-stow vim
+safe-stow wezterm
+safe-stow zsh
+safe-stow alacritty $HOME/.config/alacritty
+safe-stow flameshot $HOME/.config/flameshot
+safe-stow fuzzel    $HOME/.config/fuzzel
+safe-stow ghostty   $HOME/.config/ghostty
+safe-stow helix     $HOME/.config/helix
+safe-stow hypr      $HOME/.config/hypr
+safe-stow kitty     $HOME/.config/kitty
+safe-stow nvim      $HOME/.config/nvim
+safe-stow rofi      $HOME/.config/rofi
+safe-stow sherlock  $HOME/.config/sherlock
+safe-stow starship  $HOME/.config/
+safe-stow waybar    $HOME/.config/waybar
+safe-stow wofi      $HOME/.config/wofi
 
 if [[ "$MY_OS" == "NixOS" ]]; then
     # If main configuration is not already a symlink
