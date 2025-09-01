@@ -20,6 +20,8 @@
   # Might be needed for Slack to work properly with Wayland
   # TODO: test if still needed
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  environment.sessionVariables.PLAYWRIGHT_BROWSERS_PATH = "${pkgs.playwright-driver.browsers}";
+  environment.sessionVariables.PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS = "true";
 
   virtualisation.docker.enable = true;
 
@@ -28,6 +30,7 @@
     docker
     dotnet-sdk
     nodejs_22
+    playwright-driver.browsers
     python313
     slack
 
