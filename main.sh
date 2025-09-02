@@ -23,6 +23,7 @@ safe-stow alacritty $HOME/.config/alacritty
 safe-stow flameshot $HOME/.config/flameshot
 safe-stow fuzzel    $HOME/.config/fuzzel
 safe-stow ghostty   $HOME/.config/ghostty
+safe-stow git       $HOME/.config/git
 safe-stow helix     $HOME/.config/helix
 safe-stow hypr      $HOME/.config/hypr
 safe-stow kitty     $HOME/.config/kitty

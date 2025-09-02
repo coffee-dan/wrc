@@ -1,0 +1,7 @@
+[init]
+    defaultBranch = main
+
+[push]
+    autoSetupRemote = true
+    # Only push the current branch (safer than pushing all branches)
+    default = simple
