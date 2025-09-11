@@ -21,14 +21,17 @@
     docker
     gifsicle
     nodejs_22
+    mmv
     python313
     yt-dlp
 
     # GUI - Applications
     dbeaver-bin
     font-manager
+    kdePackages.koko
     google-chrome
     # zoom-us
     inputs.zen-browser.packages.x86_64-linux.default
+    xfce.ristretto
   ];
 }

@@ -146,6 +146,74 @@ function ffmpeg-webm-gif() {
   gifsicle --optimize=3 --output "${gif_filename}-optimized.gif" --resize-height 600 "${gif_filename}.gif"
 }
 
+function unrar-normalize-archive() {
+  local base_dir="$(pwd)"
+  local rar_name="$1"
+  local dir_name="${2:-$(basename "$1" .rar | tr '[:upper:]' '[:lower:]' | tr ' ' '-' | tr -s '-')}"
+
+  if ! mkdir "$dir_name"; then
+    echo "Error: Directory '$dir_name' already exists" >&2
+    exit 1
+  fi
+
+  echo "Extracting '$rar_name' to '$dir_name/'..."
+  if unrar e -o- "$1" "$dir_name/"; then
+    echo "Extraction completed successfully"
+  else
+    echo "Error: Failed to extract '$rar_name'" >&2
+    exit 1
+  fi
+
+  mmv "$dir_name/*(*)*" "$dir_name/$dir_name-#2#3"
+  mmv "$dir_name/*.GIF" "$dir_name/#1.gif"
+  mmv "$dir_name/*.JPG" "$dir_name/#1.jpg"
+  mmv "$dir_name/*.PNG" "$dir_name/#1.png"
+  mmv "$dir_name/*.MOV" "$dir_name/#1.mov"
+
+  find "$dir_name/" -maxdepth 1 -type f \( -name "*.jpg" -o -name "*.png" \) \
+    -exec zip "$dir_name/$dir_name-images.zip" {} +
+
+  find "$dir_name/" -maxdepth 1 -type f \( -name "*.mp4" -o -name "*.mov" -o -name "*.gif" \) \
+    -exec zip "$dir_name/$dir_name-videos.zip" {} +
+
+  mv "$dir_name/*.zip" ./archives
+  mv "$dir_name/*.rar" ./archives
+
+  mv "$dir_name/*" ./
+
+  rmdir "$dir_name"
+}
+
+function normalize-archive() {
+  local base_dir="$(pwd)"
+  local dir_name="$(basename "$PWD")"
+
+  echo "normalizing filenames..."
+  mmv "*(*)*" "$dir_name-#2#3"
+  mmv "*.GIF" "#1.gif"
+  mmv "*.JPG" "#1.jpg"
+  mmv "*.PNG" "#1.png"
+  mmv "*.MOV" "#1.mov"
+
+  echo "creating $dir_name-images.zip..."
+  find . -maxdepth 1 -type f \( -name "*.jpg" -o -name "*.png" \) \
+    -exec zip "$dir_name-images.zip" {} +
+
+  echo "creating $dir_name-videos.zip..."
+  find . -maxdepth 1 -type f \( -name "*.mp4" -o -name "*.mov" -o -name "*.gif" \) \
+    -exec zip "$dir_name-videos.zip" {} +
+
+  echo "archiving archives..."
+  mv *.zip ../archives
+  mv *.rar ../archives
+
+  echo "moving media to many gallery..."
+  mv * ../
+
+  echo "deleting $base_dir if empty..."
+  rmdir "$base_dir"
+}
+
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 
 if command -v zoxide >/dev/null; then

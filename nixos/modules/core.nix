@@ -94,6 +94,7 @@
     # CLI - Utils - Etc
     bat
     bottom
+    cmatrix
     ffmpeg
     fzf
     gh
