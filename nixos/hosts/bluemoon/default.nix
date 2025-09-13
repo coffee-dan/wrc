@@ -15,6 +15,13 @@
 
   networking.hostName = "bluemoon";
 
+  # OpenRGB does not seem to detect the lights on the fans
+  # TODO: investigate how/why this is happening
+  # services.hardware.openrgb = {
+  #   enable = true;
+  #   package = pkgs.openrgb-with-all-plugins;
+  # };
+
   virtualisation.docker.enable = true;
 
   environment.systemPackages = with pkgs; [
@@ -32,6 +39,7 @@
     google-chrome
     # zoom-us
     inputs.zen-browser.packages.x86_64-linux.default
+    # openrgb-with-all-plugins
     xfce.ristretto
   ];
 }

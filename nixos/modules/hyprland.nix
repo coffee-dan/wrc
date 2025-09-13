@@ -9,7 +9,7 @@
     services.displayManager.sddm = {
         enable = true;
         wayland.enable = true;
-        theme = "cyberpunk";
+        theme = "sddm-astronaut-theme";
     };
 
     # Fix for file type association menu in standalone dolphin
