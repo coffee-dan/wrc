@@ -8,6 +8,16 @@
     services.xserver.enable = true;
     services.displayManager.sddm = {
         enable = true;
+        package = pkgs.kdePackages.sddm;
+
+        theme = "sddm-astronaut-theme";
+        extraPackages = with pkgs; [
+            sddm-astronaut
+            kdePackages.qtbase
+            kdePackages.qtwayland
+            kdePackages.qtmultimedia
+        ];
+
         wayland.enable = true;
         theme = "sddm-astronaut-theme";
     };
@@ -28,7 +38,7 @@
         # - [ maybe? ] login theme sddm-astronaut
         rose-pine-hyprcursor
         ( sddm-astronaut.override
-            { embeddedTheme = "cyberpunk"; }
+            { embeddedTheme = "pixel-sakura"; }
         )
         udiskie
         wl-clipboard
@@ -52,6 +62,9 @@
         kdePackages.okular            # document viewer (pdf)
         kdePackages.plasma-workspace  # "Various components needed to run a Plasma-based environment"
         kdePackages.qtsvg             # support for svg icons
+
+        # Needed for sddm-astronaut
+        kdePackages.qtmultimedia
 
         # suggested for dolphin open with menu
         kdePackages.kdf

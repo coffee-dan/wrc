@@ -130,7 +130,7 @@ alias waybar-reload="pkill -SIGUSR2 waybar"
 #  General
 alias c="clear -x"
 alias gwm="cowsay god i wish that were me"
-alias hfz="cat ~/.zsh_history | fzf"
+alias hfz="print -z \"\$(fc -rl 1 | sed 's/ *[0-9]* *//' | fzf)\""
 alias rsrc="source ~/.zshrc"
 alias stetris="tetris && clear"
 alias zshrc="$EDITOR ~/.zshrc"

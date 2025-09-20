@@ -27,6 +27,7 @@
 
   environment.systemPackages = with pkgs; [
     # CLI - Utils - Etc
+    claude-code
     docker
     dotnet-sdk
     nodejs_22
