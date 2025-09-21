@@ -19,7 +19,6 @@
         ];
 
         wayland.enable = true;
-        theme = "sddm-astronaut-theme";
     };
 
     # Fix for file type association menu in standalone dolphin
@@ -34,11 +33,9 @@
         hyprpaper
         hyprpolkitagent
         playerctl           # media player control
-        # TODO add system.userActivationScripts to move installed theme into correct directory
-        # - [ maybe? ] login theme sddm-astronaut
         rose-pine-hyprcursor
         ( sddm-astronaut.override
-            { embeddedTheme = "pixel-sakura"; }
+            { embeddedTheme = "post-apocalyptic_hacker"; }
         )
         udiskie
         wl-clipboard

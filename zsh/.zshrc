@@ -127,6 +127,7 @@ alias pac-orphans="pacman -Qdt"
 alias pac-list="pacman -Qe"
 #  Arch / Hyprland
 alias waybar-reload="pkill -SIGUSR2 waybar"
+alias hyprclients="hyprctl clients -j | jq -r '.[] | \"Class: \(.class)\nTitle: \(.title)\nPID: \(.pid)\nWorkspace: \(.workspace.name)\n\"'"
 #  General
 alias c="clear -x"
 alias gwm="cowsay god i wish that were me"

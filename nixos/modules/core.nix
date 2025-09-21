@@ -100,13 +100,13 @@
     gh
     git
     helix
+    jq
     mise
     neofetch
     # TODO: determine if this is needed
     pulseaudioFull
     rar
     ripgrep
-    sherlock-launcher
     starship
     stow
     trashy
@@ -120,10 +120,15 @@
 
     # GUI - Applications
     _1password-gui
+    albert
     discord-ptb
     mpv
     pinta
     protonvpn-gui
+    sherlock-launcher
+    # ulauncher: dependency on webkitgtk_4 gives insecure dependency warning
+    # see: https://github.com/NixOS/nixpkgs/issues/430262
+    # ulauncher
     vscode
     wezterm
   ];
