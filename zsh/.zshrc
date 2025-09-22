@@ -113,10 +113,10 @@ alias nx-build-upgrade="sudo nixos-rebuild boot --upgrade"
 alias nx-build="sudo nixos-rebuild boot"
 alias nx-switch="sudo nixos-rebuild switch"
 alias nx-rollback='sudo nixos-rebuild switch --rollback'
-alias nxcl='sudo nix-channel --list'
-alias nxcu='sudo nix-channel --update'
-alias nxca='sudo nix-channel --add'
-alias nxcr='sudo nix-channel --remove'
+alias nx-chan-list='sudo nix-channel --list'
+alias nx-chan-update='sudo nix-channel --update'
+alias nx-chan-add='sudo nix-channel --add'
+alias nx-chan-remove='sudo nix-channel --remove'
 alias nxgl="nixos-rebuild list-generations"
 #  Arch / Pacman
 alias pac-install="sudo pacman -S"
