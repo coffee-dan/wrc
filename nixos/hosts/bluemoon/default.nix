@@ -8,6 +8,7 @@
       # Include building blocks for specific stuff
       ../../modules/core.nix
       ../../modules/hyprland.nix
+      ../../modules/quickshell.nix
       ../../modules/gaming.nix
       ../../modules/development/godot-workflow.nix
       ../../modules/services/printing.nix
