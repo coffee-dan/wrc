@@ -27,9 +27,11 @@
 
   environment.systemPackages = with pkgs; [
     # CLI - Utils - Etc
+    azure-cli
     claude-code
     docker
     dotnet-sdk
+    httpie
     nodejs_22
     playwright-driver.browsers
     python313

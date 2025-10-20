@@ -137,6 +137,24 @@ alias stetris="tetris && clear"
 alias zshrc="$EDITOR ~/.zshrc"
 alias opng="optipng -clobber -o7"
 
+# bt functions from https://bbs.archlinux.org/viewtopic.php?pid=2053795#p2053795
+function bton() {
+  sudo rfkill unblock bluetooth
+  sudo systemctl start bluetooth
+  sleep 1
+  bluetoothctl power on
+}
+
+function btoff() {
+  bluetoothctl power off
+  sudo systemctl stop bluetooth
+  sudo rfkill block bluetooth
+}
+
+function btrestart() {
+  btoff && bton
+}
+
 function ffmpeg-webm-gif() {
   local webm_filename="$1"
   local gif_filename="$(basename "${webm_filename%.*}")"
