@@ -98,7 +98,7 @@ Scope {
 
                     BarContent {
                         id: barContent
-                        
+
                         implicitHeight: Appearance.sizes.barHeight
                         anchors {
                             right: parent.right
