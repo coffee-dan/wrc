@@ -8,23 +8,23 @@
 
 
 import "./modules/common/"
-// import "./modules/background/"
+import "./modules/background/"
 import "./modules/bar/"
-// import "./modules/cheatsheet/"
-// import "./modules/crosshair/"
-// import "./modules/dock/"
-// import "./modules/lock/"
-// import "./modules/mediaControls/"
-// import "./modules/notificationPopup/"
-// import "./modules/onScreenDisplay/"
-// import "./modules/onScreenKeyboard/"
-// import "./modules/overview/"
-// import "./modules/screenCorners/"
-// import "./modules/sessionScreen/"
-// import "./modules/sidebarLeft/"
-// import "./modules/sidebarRight/"
-// import "./modules/verticalBar/"
-// import "./modules/wallpaperSelector/"
+import "./modules/cheatsheet/"
+import "./modules/crosshair/"
+import "./modules/dock/"
+import "./modules/lock/"
+import "./modules/mediaControls/"
+import "./modules/notificationPopup/"
+import "./modules/onScreenDisplay/"
+import "./modules/onScreenKeyboard/"
+import "./modules/overview/"
+import "./modules/screenCorners/"
+import "./modules/sessionScreen/"
+import "./modules/sidebarLeft/"
+import "./modules/sidebarRight/"
+import "./modules/verticalBar/"
+import "./modules/wallpaperSelector/"
 
 import QtQuick
 import QtQuick.Window
@@ -65,22 +65,22 @@ ShellRoot {
     }
 
     LazyLoader { active: enableBar && Config.ready && !Config.options.bar.vertical; component: Bar {} }
-    // LazyLoader { active: enableBackground; component: Background {} }
-    // LazyLoader { active: enableCheatsheet; component: Cheatsheet {} }
-    // LazyLoader { active: enableCrosshair; component: Crosshair {} }
-    // LazyLoader { active: enableDock && Config.options.dock.enable; component: Dock {} }
-    // LazyLoader { active: enableLock; component: Lock {} }
-    // LazyLoader { active: enableMediaControls; component: MediaControls {} }
-    // LazyLoader { active: enableNotificationPopup; component: NotificationPopup {} }
-    // LazyLoader { active: enableOnScreenDisplayBrightness; component: OnScreenDisplayBrightness {} }
-    // LazyLoader { active: enableOnScreenDisplayVolume; component: OnScreenDisplayVolume {} }
-    // LazyLoader { active: enableOnScreenKeyboard; component: OnScreenKeyboard {} }
-    // LazyLoader { active: enableOverview; component: Overview {} }
-    // LazyLoader { active: enableReloadPopup; component: ReloadPopup {} }
-    // LazyLoader { active: enableScreenCorners; component: ScreenCorners {} }
-    // LazyLoader { active: enableSessionScreen; component: SessionScreen {} }
-    // LazyLoader { active: enableSidebarLeft; component: SidebarLeft {} }
-    // LazyLoader { active: enableSidebarRight; component: SidebarRight {} }
-    // LazyLoader { active: enableVerticalBar && Config.ready && Config.options.bar.vertical; component: VerticalBar {} }
-    // LazyLoader { active: enableWallpaperSelector; component: WallpaperSelector {} }
+    LazyLoader { active: enableBackground; component: Background {} }
+    LazyLoader { active: enableCheatsheet; component: Cheatsheet {} }
+    LazyLoader { active: enableCrosshair; component: Crosshair {} }
+    LazyLoader { active: enableDock && Config.options.dock.enable; component: Dock {} }
+    LazyLoader { active: enableLock; component: Lock {} }
+    LazyLoader { active: enableMediaControls; component: MediaControls {} }
+    LazyLoader { active: enableNotificationPopup; component: NotificationPopup {} }
+    LazyLoader { active: enableOnScreenDisplayBrightness; component: OnScreenDisplayBrightness {} }
+    LazyLoader { active: enableOnScreenDisplayVolume; component: OnScreenDisplayVolume {} }
+    LazyLoader { active: enableOnScreenKeyboard; component: OnScreenKeyboard {} }
+    LazyLoader { active: enableOverview; component: Overview {} }
+    LazyLoader { active: enableReloadPopup; component: ReloadPopup {} }
+    LazyLoader { active: enableScreenCorners; component: ScreenCorners {} }
+    LazyLoader { active: enableSessionScreen; component: SessionScreen {} }
+    LazyLoader { active: enableSidebarLeft; component: SidebarLeft {} }
+    LazyLoader { active: enableSidebarRight; component: SidebarRight {} }
+    LazyLoader { active: enableVerticalBar && Config.ready && Config.options.bar.vertical; component: VerticalBar {} }
+    LazyLoader { active: enableWallpaperSelector; component: WallpaperSelector {} }
 }

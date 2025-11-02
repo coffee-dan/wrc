@@ -113,6 +113,7 @@
     tree
     udisks
     unzip
+    vitetris
     wget
     zip
     zoxide

@@ -11,6 +11,33 @@
         wayland-protocols
         wlogout
 
+        # Audio
+        libcava # or astal.cava
+        lxqt.pavucontrol-qt # or just pavucontrol...
+        wireplumber
+        libdbusmenu-gtk3
+        gtklock-playerctl-module
+
+        # Backlight
+        geoclue2
+        brightnessctl
+        ddcutil
+
+        # Basic
+        axel
+        bc
+        coreutils-full
+        cliphist
+        cmake
+        curl
+        rsync
+        wget
+        ripgrep
+        jq
+        meson
+        # https://mynixos.com/options/xdg.userDirs
+
+
         # Python system pkgs
         clang
         gtk4
@@ -37,6 +64,7 @@
         hyprcursor
         hyprland
         hyprland-qtutils
+        hyprland-qt-support
         hyprlang
         hyprlock
         hyprpicker
@@ -44,6 +72,28 @@
         hyprutils
         hyprwayland-scanner
         xdg-desktop-portal-hyprland
+
+
+        # Toolkit
+        kdialog
+    	qt6-5compat
+    	qt6-avif-image-plugin
+    	qt6-base
+    	qt6-declarative
+    	qt6-imageformats
+    	qt6-multimedia
+    	qt6-positioning
+    	qt6-quicktimeline
+    	qt6-sensors
+    	qt6-svg
+    	qt6-tools
+    	qt6-translations
+    	qt6-virtualkeyboard
+    	qt6-wayland
+    	syntax-highlighting
+    	upower
+    	wtype
+    	ydotool
 
         # KDE ecosystem pkgs
         kdePackages.qt5compat # for Qt5compat.GraphicalEffects
