@@ -10,6 +10,7 @@
       # Include building blocks for specific stuff
       ../../modules/core.nix
       ../../modules/hyprland.nix
+      ../../modules/quickshell.nix
     ];
 
   networking.hostName = "capra";
@@ -42,6 +43,7 @@
     font-manager
     google-chrome
     libreoffice-fresh
+    postman
     inputs.zen-browser.packages.x86_64-linux.default
   ];
 }

@@ -131,7 +131,8 @@ alias hyprclients="hyprctl clients -j | jq -r '.[] | \"Class: \(.class)\nTitle: 
 #  General
 alias c="clear -x"
 alias gwm="cowsay god i wish that were me"
-alias hfz="print -z \"\$(fc -rl 1 | sed 's/ *[0-9]* *//' | fzf)\""
+# TODO look into deduping results before passing to fzf
+alias hfz="print -z \"\$(fc -rl 1 | sed 's/ *[0-9]*\** *//' | fzf)\""
 alias rsrc="source ~/.zshrc"
 alias stetris="tetris && clear"
 alias zshrc="$EDITOR ~/.zshrc"

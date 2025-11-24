@@ -121,6 +121,7 @@ sudo nixos-rebuild switch --flake .#bluemoon
 To update the system:
 
 ```bash
+cd ~/wrc/nixos
 nix flake update
 sudo nixos-rebuild switch
 ```

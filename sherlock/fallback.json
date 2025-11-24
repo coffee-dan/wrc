@@ -31,57 +31,6 @@
     "add_actions": null
   },
   {
-    "name": "Spotify",
-    "alias": null,
-    "tag_start": null,
-    "tag_end": null,
-    "display_name": null,
-    "on_return": null,
-    "next_content": null,
-    "type": "audio_sink",
-    "priority": 1.0,
-    "exit": true,
-    "shortcut": true,
-    "spawn_focus": false,
-    "async": true,
-    "home": "OnlyHome",
-    "args": {},
-    "binds": [
-      {
-        "bind": "Return",
-        "callback": "playpause",
-        "exit": false
-      },
-      {
-        "bind": "l",
-        "callback": "next",
-        "exit": false
-      },
-      {
-        "bind": "h",
-        "callback": "previous",
-        "exit": false
-      }
-    ],
-    "actions": [
-      {
-        "name": "Skip",
-        "exec": null,
-        "icon": "media-seek-forward",
-        "method": "inner.next",
-        "exit": false
-      },
-      {
-        "name": "Previous",
-        "exec": null,
-        "icon": "media-seek-backward",
-        "method": "inner.previous",
-        "exit": false
-      }
-    ],
-    "add_actions": null
-  },
-  {
     "name": "Calculator",
     "alias": null,
     "tag_start": null,
@@ -125,6 +74,35 @@
     "binds": null,
     "actions": null,
     "add_actions": null
+  },
+  {
+    "name": "Clipboard",
+    "alias": "clip",
+    "type": "clipboard-execution",
+    "args": {
+      "capabilities": [
+        "url",
+        "colors.hex",
+        "colors.rgb",
+        "colors.hsl",
+        "calc.math",
+        "calc.lengths",
+        "calc.weights",
+        "calc.temperatures"
+      ]
+    },
+    "priority": 5.0,
+    "home": "Home"
+  },
+  {
+    "name": "Emoji Picker",
+    "alias": "emoji",
+    "type": "emoji_picker",
+    "args": {
+      "default_skin_tone": "Simpsons"
+    },
+    "priority": 4.0,
+    "home": "Home"
   },
   {
     "name": "Kill Process",

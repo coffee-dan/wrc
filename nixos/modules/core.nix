@@ -121,15 +121,12 @@
 
     # GUI - Applications
     _1password-gui
-    albert
     discord-ptb
     mpv
     pinta
     protonvpn-gui
     sherlock-launcher
-    # ulauncher: dependency on webkitgtk_4 gives insecure dependency warning
-    # see: https://github.com/NixOS/nixpkgs/issues/430262
-    # ulauncher
+    ulauncher
     vscode
     wezterm
   ];
