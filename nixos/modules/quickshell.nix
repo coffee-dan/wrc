@@ -60,51 +60,62 @@
         sqlite
 
         # Hyprland pkgs
-        hypridle
-        hyprcursor
-        hyprland
-        hyprland-qtutils
-        hyprland-qt-support
-        hyprlang
-        hyprlock
-        hyprpicker
-        hyprsunset
         hyprutils
+        hyprpicker
+        hyprlang
+        hypridle
+        hyprland-qt-support
+        hyprland-qtutils
+        hyprlock
+        hyprcursor
         hyprwayland-scanner
+        hyprland
         xdg-desktop-portal-hyprland
+        hyprsunset
 
 
         # Toolkit
-        kdialog
-    	qt6-5compat
-    	qt6-avif-image-plugin
-    	qt6-base
-    	qt6-declarative
-    	qt6-imageformats
-    	qt6-multimedia
-    	qt6-positioning
-    	qt6-quicktimeline
-    	qt6-sensors
-    	qt6-svg
-    	qt6-tools
-    	qt6-translations
-    	qt6-virtualkeyboard
-    	qt6-wayland
-    	syntax-highlighting
-    	upower
-    	wtype
-    	ydotool
+        # kdialog -> qt5compat
+        # qt6-5compat -> kdialog
+    	# qt6-avif-image-plugin -> ???
+    	# qt6-base -> qtbase
+    	# qt6-declarative -> qtdeclarative
+    	# qt6-imageformats -> qtimageformats
+    	# qt6-multimedia -> qtmultimedia
+    	# qt6-positioning -> qtpositioning and qt6-location
+    	# qt6-quicktimeline -> qtmultimedia
+    	# qt6-sensors -> qtsensors
+    	# qt6-svg -> qtsvg
+    	# qt6-tools -> qttools
+    	# qt6-translations -> qttranslations
+    	# qt6-virtualkeyboard -> qtvirtualkeyboard
+    	# qt6-wayland -> qtwayland
+    	# syntax-highlighting -> syntax-highlighting
+    	# upower
+    	# wtype
+    	# ydotool
 
         # KDE ecosystem pkgs
-        kdePackages.qt5compat # for Qt5compat.GraphicalEffects
+        kdePackages.kdialog # arch kdialog
+        kdePackages.qt5compat # for Qt5compat.GraphicalEffects - arch qt6-5compat
+
+        kdePackages.qtbase
         kdePackages.qtdeclarative # for QML
-        kdePackages.kdialog
-        kdePackages.qtwayland
+        kdePackages.qtimageformats
         kdePackages.qtpositioning # for Weather service location features
         kdePackages.qtlocation # additional location services for QtPositioning
-
-
-        # GUI - Applications
+        kdePackages.qtmultimedia
+        kdePackages.qtquicktimeline
+        kdePackages.qtsensors
+        kdePackages.qtsvg
+        kdePackages.qttools
+        kdePackages.qttranslations
+        kdePackages.qtvirtualkeyboard
+        kdePackages.qtwayland
+        kdePackages.syntax-highlighting
+        upower
+    	wtype
+    	ydotool
 
     ];
 
