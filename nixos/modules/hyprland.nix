@@ -1,7 +1,11 @@
 { config, pkgs, ... }:
 {
-    environment.sessionVariables.MY_SDDM = "wayland-sessions";
-    environment.sessionVariables.MY_HYPRLAND_MONITORS = "desktop-ips235";
+    environment.sessionVariables = {
+        MY_SDDM = "wayland-sessions";
+        MY_HYPRLAND_MONITORS = "desktop-ips235";
+
+        HYPRSHOT_DIR = "$HOME/Pictures";
+    };
 
     programs.hyprland.enable = true;
 
@@ -40,11 +44,14 @@
         udiskie
         wl-clipboard
 
+        # Screenshot tools
+        grim
+        hyprshot
+        satty
+        slurp
+
         # GUI - Applications
         blueman
-        ( flameshot.override
-            { enableWlrSupport = true; }
-        )
         networkmanagerapplet
         swaynotificationcenter
         waybar

@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+grim -g "$(slurp -d -c '#ff0000ff')" -t ppm - | satty --filename -
+# or hyprshot --mode region --raw - | satty --filename -

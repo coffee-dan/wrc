@@ -1,0 +1,12 @@
+[general]
+early-exit = true
+initial-tool = "arrow"
+output-filename = "~/Pictures/satty-%Y-%m-%d_%H:%M:%S.png"
+
+[color-palette]
+palette = [
+    "#ff0000",
+    "#ffd700",
+    "#ff1493",
+    "#2222ff",
+]

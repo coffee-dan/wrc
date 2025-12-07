@@ -29,11 +29,13 @@ safe-stow hypr       $HOME/.config/hypr
 safe-stow kitty      $HOME/.config/kitty
 safe-stow nvim       $HOME/.config/nvim
 safe-stow rofi       $HOME/.config/rofi
+safe-stow satty      $HOME/.config/satty
 safe-stow sherlock   $HOME/.config/sherlock
 safe-stow starship   $HOME/.config/
 safe-stow quickshell $HOME/.config/quickshell
 safe-stow waybar     $HOME/.config/waybar
 safe-stow wofi       $HOME/.config/wofi
+safe-stow local-bin  $HOME/.local/bin
 
 if [[ "$MY_OS" == "NixOS" ]]; then
     # If main configuration is not already a symlink
