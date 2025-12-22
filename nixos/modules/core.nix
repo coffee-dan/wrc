@@ -127,6 +127,7 @@
     protonvpn-gui
     sherlock-launcher
     ulauncher
+    vicinae
     vscode
     wezterm
   ];

@@ -24,7 +24,10 @@
   environment.sessionVariables.PLAYWRIGHT_BROWSERS_PATH = "${pkgs.playwright-driver.browsers}";
   environment.sessionVariables.PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS = "true";
 
-  virtualisation.docker.enable = true;
+  virtualisation.docker = {
+    enable = true;
+    extraPackages = [ pkgs.docker-buildx ];
+  };
 
   environment.systemPackages = with pkgs; [
     # CLI - Utils - Etc

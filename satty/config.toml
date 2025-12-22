@@ -2,6 +2,7 @@
 early-exit = true
 initial-tool = "arrow"
 output-filename = "~/Pictures/satty-%Y-%m-%d_%H:%M:%S.png"
+copy-command = "wl-copy"
 
 [color-palette]
 palette = [
