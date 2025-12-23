@@ -43,6 +43,7 @@
         )
         udiskie
         wl-clipboard
+        wf-recorder
 
         # Screenshot tools
         grim

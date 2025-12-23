@@ -1,7 +1,7 @@
 [general]
 early-exit = true
 initial-tool = "arrow"
-output-filename = "~/Pictures/satty-%Y-%m-%d_%H:%M:%S.png"
+output-filename = "~/Pictures/Screen Shot %Y %m %d at %H.%M.%S.png"
 copy-command = "wl-copy"
 
 [color-palette]

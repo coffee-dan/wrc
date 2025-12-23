@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+wf-recorder -g "$(slurp -d)" -f "$HOME/Videos/Screen Recording $(date '+%Y-%m-%d at %I.%M.%S %p').mp4"
