@@ -122,12 +122,13 @@
     # GUI - Applications
     _1password-gui
     discord-ptb
-    mpv
+    # mpv # weird brightness issue at the moment
     pinta
     protonvpn-gui
     sherlock-launcher
     ulauncher
     vicinae
+    vlc
     vscode
     wezterm
   ];

@@ -125,7 +125,7 @@ alias pac-clean="sudo pacman -Scc"
 alias pac-remove="sudo pacman -Rcns"
 alias pac-orphans="pacman -Qdt"
 alias pac-list="pacman -Qe"
-#  Arch / Hyprland
+#  Hyprland and friends
 alias waybar-reload="pkill -SIGUSR2 waybar"
 alias hyprclients="hyprctl clients -j | jq -r '.[] | \"Class: \(.class)\nTitle: \(.title)\nPID: \(.pid)\nWorkspace: \(.workspace.name)\n\"'"
 #  General
