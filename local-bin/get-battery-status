@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+ENABLE_BATTERY=false
+BATTERY_CHARGING=false
+
+for BATTERY in /sys/class/power_supply/*BAT*; do
+  if [[ -f "$BATTERY/uevent" ]]; then
+    ENABLE_BATTERY=true
+    if [[ $(cat /sys/class/power_supply/*/status | head -1) == "Charging" ]]; then
+      BATTERY_CHARGING=true
+    fi
+    break
+  fi
+done
+
+if [[ $ENABLE_BATTERY == true ]]; then
+  if [[ $BATTERY_CHARGING == true ]]; then
+    echo -n "(+) "
+  fi
+  echo -n "$(cat /sys/class/power_supply/*/capacity | head -1)"%
+  if [[ $BATTERY_CHARGING == false ]]; then
+    echo -n " remaining"
+  fi
+fi
+
+echo ''

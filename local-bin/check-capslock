@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+USING_CAPSLOCK=$(hyprctl devices -j | jq '.keyboards[] | select(.main).capsLock')
+
+if [ "$USING_CAPSLOCK" = "true" ]; then
+    echo "Caps Lock active"
+else
+    echo ""
+fi
