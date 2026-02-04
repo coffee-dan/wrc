@@ -39,7 +39,6 @@
     kdePackages.koko
     google-chrome
     # zoom-us
-    inputs.zen-browser.packages.x86_64-linux.default
     # openrgb-with-all-plugins
     xfce.ristretto
   ];
