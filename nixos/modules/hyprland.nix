@@ -52,6 +52,7 @@
         slurp
 
         # GUI - Applications
+        ashell
         blueman
         networkmanagerapplet
         swaynotificationcenter

@@ -20,6 +20,7 @@ safe-stow vim
 safe-stow wezterm
 safe-stow zsh
 safe-stow alacritty  $HOME/.config/alacritty
+safe-stow ashell     $HOME/.config/ashell
 safe-stow flameshot  $HOME/.config/flameshot
 safe-stow fuzzel     $HOME/.config/fuzzel
 safe-stow ghostty    $HOME/.config/ghostty

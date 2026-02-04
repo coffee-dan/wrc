@@ -40,6 +40,6 @@
     google-chrome
     # zoom-us
     # openrgb-with-all-plugins
-    xfce.ristretto
+    ristretto
   ];
 }
