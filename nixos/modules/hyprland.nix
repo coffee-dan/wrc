@@ -25,6 +25,8 @@
         wayland.enable = true;
     };
 
+    services.upower.enable = true;
+
     # Fix for file type association menu in standalone dolphin
     # TODO: test if actually needed
     xdg.mime.enable = true;
@@ -56,6 +58,7 @@
         blueman
         networkmanagerapplet
         swaynotificationcenter
+        upower
         waybar
         wofi
 
