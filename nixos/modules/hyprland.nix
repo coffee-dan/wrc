@@ -63,6 +63,7 @@
         wofi
 
         # KDE Ecosystem
+        kdePackages.ark               # handler for file archives/compresssed files
         kdePackages.dolphin           # file manager
         kdePackages.ffmpegthumbs      # thumbnail creator for video files
         kdePackages.gwenview          # image viewer

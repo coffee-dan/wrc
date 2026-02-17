@@ -35,6 +35,7 @@
 
     # GUI - Applications
     dbeaver-bin
+    kdePackages.filelight
     font-manager
     kdePackages.koko
     google-chrome

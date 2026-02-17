@@ -7,7 +7,7 @@ position = "Top"
 [modules]
 left = [ [ "appLauncher", "Clipboard", "Workspaces" ] ]
 center = [ "WindowTitle" ]
-right = [ "SystemInfo", "Tray", [ "Privacy", "Settings", "Clock" ] ]
+right = [ "SwayNotifications", "SystemInfo", "Tray", [ "Privacy", "Settings", "Clock" ] ]
 
 [workspaces]
 enable_workspace_filling = true
@@ -16,6 +16,14 @@ enable_workspace_filling = true
 name = "appLauncher"
 icon = "󱗼"
 command = "vicinae toggle"
+
+[[CustomModule]]
+name = "SwayNotifications"
+icon = ""
+command = "swaync-client -t -sw"
+listen_cmd = "swaync-client -swb"
+icons.'dnd.*' = ""
+alert = ".*notification"
 
 [window_title]
 truncate_title_after_length = 100
