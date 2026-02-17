@@ -77,6 +77,8 @@ alias gshl="git stash list"
 alias gshs="git stash show --text"
 alias gcom="git stash --include-untracked && git checkout main"
 alias gnb="git stash --include-untracked && git checkout main && git pull && git checkout -b"
+alias grs="git restore --staged"
+alias grsa="git restore --staged ."
 
 function git-sync () {
   local target="${1:-$(git branch --show-current)}"
