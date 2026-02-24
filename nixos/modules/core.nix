@@ -96,6 +96,8 @@
     bottom
     cmatrix
     ffmpeg
+    file
+    freetype
     fzf
     gh
     git
@@ -103,6 +105,7 @@
     jq
     mise
     neofetch
+    noto-fonts
     # TODO: determine if this is needed
     pulseaudioFull
     rar

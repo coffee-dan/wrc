@@ -8,6 +8,11 @@
   environment.systemPackages = with pkgs; [
     heroic
     lutris
+    protontricks
     steam
+    wine
+    # yad or zenity needed for protontricks gui
+    yad
+    zenity
   ];
 }
