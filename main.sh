@@ -34,6 +34,7 @@ safe-stow rofi       $HOME/.config/rofi
 safe-stow satty      $HOME/.config/satty
 safe-stow sherlock   $HOME/.config/sherlock
 safe-stow starship   $HOME/.config/
+safe-stow swaync     $HOME/.config/swaync
 safe-stow quickshell $HOME/.config/quickshell
 safe-stow waybar     $HOME/.config/waybar
 safe-stow wofi       $HOME/.config/wofi
