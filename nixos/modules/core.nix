@@ -95,6 +95,7 @@
     bat
     bottom
     cmatrix
+    fastfetch
     ffmpeg
     file
     freetype
@@ -104,7 +105,6 @@
     helix
     jq
     mise
-    neofetch
     noto-fonts
     # TODO: determine if this is needed
     pulseaudioFull

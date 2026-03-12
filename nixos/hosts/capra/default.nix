@@ -35,6 +35,7 @@
     claude-code
     docker
     dotnet-sdk
+    dotnetCorePackages.sdk_9_0_1xx-bin
     httpie
     nodejs_22
     playwright-driver.browsers
