@@ -136,9 +136,19 @@
     wezterm
   ];
 
-  fonts.enableDefaultPackages = true;
-  fonts.packages = with pkgs; [
-    nerd-fonts.jetbrains-mono
-    nerd-fonts.go-mono
-  ];
+  fonts = {
+    enableDefaultPackages = true;
+    fontDir.enable = true;
+
+    packages = with pkgs; [
+      noto-fonts
+      noto-fonts-cjk-sans
+      noto-fonts-cjk-serif
+      noto-fonts-color-emoji
+
+      nerd-fonts.jetbrains-mono
+      nerd-fonts.go-mono
+    ];
+  };
+
 }
