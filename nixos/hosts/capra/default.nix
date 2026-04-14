@@ -18,6 +18,14 @@
     "127.0.0.1" = [ "keycloak.local" ];
   };
 
+  networking.networkmanager = {
+    enable = true;
+    plugins = with pkgs; [
+      networkmanager-openvpn
+    ];
+  };
+
+
   # Might be needed for Slack to work properly with Wayland
   # TODO: test if still needed
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
@@ -47,6 +55,10 @@
     font-manager
     google-chrome
     libreoffice-fresh
+    kdePackages.networkmanager-qt
+    kdePackages.plasma-nm
     postman
+    wtype
+    ydotool
   ];
 }

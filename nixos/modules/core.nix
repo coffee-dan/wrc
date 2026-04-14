@@ -127,7 +127,7 @@
     discord-ptb
     # mpv # weird brightness issue at the moment
     pinta
-    protonvpn-gui
+    proton-vpn
     sherlock-launcher
     ulauncher
     vicinae

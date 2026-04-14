@@ -236,6 +236,39 @@ function normalize-archive() {
   rmdir "$base_dir"
 }
 
+function wrc-checksum() {
+  local file="$1"
+  local expected="$2"
+  local algo="sha256"
+
+  if [[ "$3" == "--algorithm" ]]; then
+    algo="$4"
+  fi
+
+  local cmd
+  case "$algo" in
+    sha256) cmd="sha256sum" ;;
+    md5)    cmd="md5sum"    ;;
+    sha512) cmd="sha512sum" ;;
+    *) echo "Unknown algorithm: $algo"; return 1 ;;
+  esac
+
+  if [[ -z "$file" || -z "$expected" ]]; then
+    echo "Usage: wrc-checksum <file> <expected_hash> [--algorithm sha256|md5|sha512]"
+    return 1
+  fi
+
+  local actual
+  actual=$("$cmd" "$file" | awk '{print $1}')
+
+  if diff <(echo "$expected") <(echo "$actual") > /dev/null; then
+    echo "OK"
+  else
+    echo "FAILED (expected: $expected, got: $actual)"
+    return 1
+  fi
+}
+
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 
 if command -v zoxide >/dev/null; then
