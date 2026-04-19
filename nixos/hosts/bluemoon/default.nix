@@ -25,22 +25,33 @@
 
   virtualisation.docker.enable = true;
 
+  services.udisks2.enable = true;
+
   environment.systemPackages = with pkgs; [
+    # caligula -- used for disk imaging - not needed right now
     docker
     gifsicle
+    gnome-disk-utility
+    # disabled because it is x11
+    # gparted
     nodejs_22
     mmv
+    parted
     python313
     yt-dlp
 
     # GUI - Applications
     dbeaver-bin
+    kdePackages.dragon
     kdePackages.filelight
+    #  consider using firewalld to manage firewall interactively -- would replace existing firewall
+    # firewalld
+    # firewalld-gui
     font-manager
-    kdePackages.koko
     google-chrome
+    kdePackages.koko
+    krita
     # zoom-us
     # openrgb-with-all-plugins
-    ristretto
   ];
 }
