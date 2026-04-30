@@ -45,10 +45,12 @@
     dotnet-sdk
     dotnetCorePackages.sdk_9_0_1xx-bin
     httpie
+    heaptrack
     nodejs_22
     playwright-driver.browsers
     python313
     slack
+    valgrind
 
     # GUI - Applications
     dbeaver-bin
@@ -60,5 +62,6 @@
     postman
     wtype
     ydotool
+    zoom-us
   ];
 }

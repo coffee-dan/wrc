@@ -2,16 +2,30 @@
 
 `:--)`
 
+## OS definitions for multiple (two) systems
 
-## Quickshell pkg
+In order this is what is important:
 
-> Writing Nix expressions for Qt libraries and applications is largely similar as for other C++ software. [...]
->
-> The major caveat with Qt applications is that Qt uses a plugin system to load additional modules at runtime. In Nixpkgs, we wrap Qt applications to inject environment variables telling Qt where to discover the required plugins and QML modules.
->
-> This effectively makes the runtime dependencies pure and explicit at build-time, at the cost of introducing an extra indirection.
+- Limit unintended behavior
+- Make the system workable on first boot (no one-off configuration)
+- Use the cool software
+- Use the windows only stuff (_if_ it is good)
 
--- Taken from [Nixpkgs Reference Manual section on Qt](https://nixos.org/manual/nixpkgs/stable/#sec-language-qt)
+### Some helpful tools therein
 
+Should be prefixed with `wrc-` unless there is a really nice abbreviation.
 
-For this reason the quickshell desktop components are run via a wrapped quickshell binary so that quickshell has access to QML components like `IdleInhibitor`.
+gch - fuzzy search git checkout history
+hfz - fuzzy search zsh history
+wrc-checksum - compare file against checksum
+
+#### wip
+
+wrc-help - aggregate debugging tools + personal docs
+- simple tui with Go + bubbletea
+- check personal docs via some config file (toml? or whatever standard for Go)
+- check for manpage
+- check `which`
+- option to quickly search nix pkgs
+- final fallback for go to search engine
+- (bonus) make it a vicinae/raycast extension
