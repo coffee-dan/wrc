@@ -60,11 +60,13 @@
         swaynotificationcenter
         upower
         waybar
+        waypaper
         wofi
 
         # KDE Ecosystem
         kdePackages.ark               # handler for file archives/compresssed files
         kdePackages.dolphin           # file manager
+        kdePackages.dolphin-plugins
         kdePackages.ffmpegthumbs      # thumbnail creator for video files
         kdePackages.gwenview          # image viewer
         kdePackages.kate              # text editor

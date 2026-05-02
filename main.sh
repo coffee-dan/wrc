@@ -37,6 +37,7 @@ safe-stow starship   $HOME/.config/
 safe-stow swaync     $HOME/.config/swaync
 safe-stow quickshell $HOME/.config/quickshell
 safe-stow waybar     $HOME/.config/waybar
+safe-stow waypaper   $HOME/.config/waypaper
 safe-stow wofi       $HOME/.config/wofi
 safe-stow local-bin  $HOME/.local/bin
 
