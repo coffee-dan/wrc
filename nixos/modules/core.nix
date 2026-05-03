@@ -116,7 +116,7 @@
     tree
     udisks
     unzip
-    vitetris
+    # vitetris # currently crashes on start
     wget
     zip
     zoxide
@@ -124,12 +124,12 @@
 
     # GUI - Applications
     _1password-gui
-    discord-ptb
+    discord
     # mpv # weird brightness issue at the moment
     pinta
     proton-vpn
-    sherlock-launcher
-    ulauncher
+    # sherlock-launcher # unused in favor of vicinae
+    # ulauncher # unused in favor of vicinae
     vicinae
     vlc
     vscode
