@@ -28,7 +28,7 @@
   services.udisks2.enable = true;
 
   environment.systemPackages = with pkgs; [
-    # caligula -- used for disk imaging - not needed right now
+    caligula # used for disk imaging
     docker
     gifsicle
     gnome-disk-utility
