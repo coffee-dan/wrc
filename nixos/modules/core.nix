@@ -105,6 +105,7 @@
     helix
     jq
     mise
+    nixfmt
     noto-fonts
     # TODO: determine if this is needed
     pulseaudioFull

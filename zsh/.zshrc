@@ -192,18 +192,18 @@ function unrar-normalize-archive() {
   mmv "$dir_name/*.PNG" "$dir_name/#1.png"
   mmv "$dir_name/*.MOV" "$dir_name/#1.mov"
 
-  find "$dir_name/" -maxdepth 1 -type f \( -name "*.jpg" -o -name "*.png" \) \
-    -exec zip "$dir_name/$dir_name-images.zip" {} +
+  # find "$dir_name/" -maxdepth 1 -type f \( -name "*.jpg" -o -name "*.png" \) \
+  #   -exec zip "$dir_name/$dir_name-images.zip" {} +
 
-  find "$dir_name/" -maxdepth 1 -type f \( -name "*.mp4" -o -name "*.mov" -o -name "*.gif" \) \
-    -exec zip "$dir_name/$dir_name-videos.zip" {} +
+  # find "$dir_name/" -maxdepth 1 -type f \( -name "*.mp4" -o -name "*.mov" -o -name "*.gif" \) \
+  #   -exec zip "$dir_name/$dir_name-videos.zip" {} +
 
-  mv "$dir_name/*.zip" ./archives
-  mv "$dir_name/*.rar" ./archives
+  # mv "$dir_name/*.zip" ./archives
+  # mv "$dir_name/*.rar" ./archives
 
-  mv "$dir_name/*" ./
+  # mv "$dir_name/*" ./
 
-  rmdir "$dir_name"
+  # rmdir "$dir_name"
 }
 
 function normalize-archive() {
