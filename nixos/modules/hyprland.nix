@@ -60,7 +60,6 @@
         networkmanagerapplet
         swaynotificationcenter
         upower
-        waybar
         waypaper
         wofi
 
@@ -75,6 +74,7 @@
         kdePackages.okular            # document viewer (pdf)
         kdePackages.plasma-workspace  # "Various components needed to run a Plasma-based environment"
         kdePackages.qtsvg             # support for svg icons
+        kdePackages.systemsettings
 
         # Needed for sddm-astronaut
         kdePackages.qtmultimedia
