@@ -195,6 +195,7 @@ function unrar-normalize-archive() {
   mmv "$dir_name/*.JPG" "$dir_name/#1.jpg"
   mmv "$dir_name/*.PNG" "$dir_name/#1.png"
   mmv "$dir_name/*.MOV" "$dir_name/#1.mov"
+  mmv "$dir_name/*.jpeg" "$dir_name/#1.jpg"
 
   # find "$dir_name/" -maxdepth 1 -type f \( -name "*.jpg" -o -name "*.png" \) \
   #   -exec zip "$dir_name/$dir_name-images.zip" {} +

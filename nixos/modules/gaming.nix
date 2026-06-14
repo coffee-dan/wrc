@@ -8,6 +8,7 @@
   environment.systemPackages = with pkgs; [
     # heroic # epic games launcher alternative, attempted to use this for fall guys but did not work
     # lutris # not sure which game this was installed to assist with or if it is needed for anything
+    prismlauncher
     protontricks
     steam
     wine
