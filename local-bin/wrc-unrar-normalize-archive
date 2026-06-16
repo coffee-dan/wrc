@@ -22,6 +22,21 @@ def unrar(archive: Path, destination: Path, password: str | None = None):
 
     print("Extraction completed successfully")
 
+def extract7z(archive: Path, destination: Path, password: str | None = None):
+    cmd = ["7z", "e", "-aos"]
+
+    if password != None:
+        cmd.append(f"-p{password}")
+
+    cmd += [str(archive), str(destination)]
+
+    try:
+        subprocess.run(cmd, check=True)
+    except subprocess.CalledProcessError as e:
+        print(f"Error: Failed to extract '{archive.name}'")
+        print(e.stderr)
+        sys.exit(e.returncode)
+
 def mmv(from_pattern: str, to_pattern: str):
     print(f"running mmv {from_pattern} {to_pattern}")
     subprocess.run(["mmv", from_pattern, to_pattern])

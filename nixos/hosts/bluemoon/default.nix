@@ -38,6 +38,8 @@
     mmv
     parted
     python313
+    python313Packages.xattr
+    p7zip
     yt-dlp
 
     # GUI - Applications
