@@ -7,7 +7,7 @@ position = "Top"
 [modules]
 left = [ [ "appLauncher", "Clipboard", "Workspaces" ] ]
 center = [ "WindowTitle" ]
-right = [ "SwayNotifications", "SystemInfo", "Tray", [ "Privacy", "Settings", "Clock" ] ]
+right = [ "SwayNotifications", "SystemInfo", "Tray", [ "Privacy", "Settings", "Tempo" ] ]
 
 [workspaces]
 enable_workspace_filling = true
@@ -37,8 +37,8 @@ wifi_more_cmd = "nm-connection-editor"
 vpn_more_cmd = "nm-connection-editor"
 # bluetooth_more_cmd = "blueberry"
 
-[clock]
-format = "%a %b %d %I:%M %p"
+[tempo]
+clock_format = "%a %b %d %I:%M %p"
 
 [appearance]
 style = "Islands"

@@ -30,6 +30,7 @@
   environment.systemPackages = with pkgs; [
     caligula # used for disk imaging
     docker
+    ghostscript
     gifsicle
     gnome-disk-utility
     # disabled because it is x11
@@ -53,6 +54,7 @@
     google-chrome
     kdePackages.koko
     krita
+    xnviewmp
     # zoom-us
     # openrgb-with-all-plugins
   ];
