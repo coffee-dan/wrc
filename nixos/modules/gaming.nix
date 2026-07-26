@@ -10,7 +10,14 @@
     # lutris # not sure which game this was installed to assist with or if it is needed for anything
     prismlauncher
     protontricks
-    steam
+
+    (pkgs.steam.override {
+      extraPkgs = pkgs: [
+        pkgs.noto-fonts-cjk-sans
+        pkgs.noto-fonts-cjk-serif
+      ];
+    })
+
     wine
     # yad or zenity needed for protontricks gui
     yad
