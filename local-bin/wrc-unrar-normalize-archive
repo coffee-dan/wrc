@@ -91,26 +91,42 @@ def renumerate(directory: Path):
 
         index += 1
 
+def create_directory(directory: Path):
+    try:
+        directory.mkdir()
+    except FileExistsError:
+        print(f"Directory '{directory.name}' already exists")
+
 def main():
     parser = argparse.ArgumentParser(description="Extract and normalize contents of a rar archive")
-    parser.add_argument("archive", type=Path)
-    parser.add_argument("directory_name", type=str, nargs="?", default=None)
+    parser.add_argument("--action", "-a", type=str, choices=["all", "extract", "normalize"], default="all")
+    parser.add_argument("--target", "-t", type=str, default=None)
     parser.add_argument("--password", "-p", type=str, default=None)
+    parser.add_argument("archive", type=Path)
     args = parser.parse_args()
 
     archive = args.archive
-    directory_name = args.directory_name or get_basename(archive.stem)
-    password = args.password
+    target = args.target or get_basename(archive.stem)
+    target_directory = Path.cwd().joinpath(target)
 
-    output_directory = Path(f"./{directory_name}/")
+    extracting = False
+    normalizing = False
+    match args.action:
+        case "all":
+            extracting = True
+            normalizing = True
+        case "extract":
+            extracting = True
+        case "normalize":
+            normalizing = True
 
-    try:
-        output_directory.mkdir()
-    except FileExistsError:
-        print(f"Directory '{directory_name}' already exists")
+    create_directory(target_directory)
 
-    unrar(archive, output_directory, password)
-    renumerate(output_directory)
+    if extracting:
+        unrar(archive, target_directory, args.password)
+
+    if normalizing:
+        renumerate(target_directory)
 
 if __name__ == "__main__":
     main()
