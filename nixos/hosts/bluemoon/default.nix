@@ -54,6 +54,7 @@
     google-chrome
     kdePackages.koko
     krita
+    libreoffice
     xnviewmp
     # zoom-us
     # openrgb-with-all-plugins
