@@ -59,6 +59,7 @@
         blueman
         networkmanagerapplet
         swaynotificationcenter
+        swayosd
         upower
         waypaper
         wofi
