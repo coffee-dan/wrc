@@ -104,6 +104,7 @@
     git
     helix
     jq
+    libwebp
     mise
     nixfmt
     noto-fonts

@@ -274,6 +274,14 @@ function wrc-checksum() {
   fi
 }
 
+function wrc-convert-webp() {
+  local file="$1"
+  local stem="$(basename -- "$file" .${file##*.})"
+  local ext="${2:-png}"
+
+  dwebp $file -o "$stem.$ext"
+}
+
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 
 if command -v zoxide >/dev/null; then
