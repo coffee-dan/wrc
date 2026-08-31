@@ -9,7 +9,7 @@
       ../../modules/core.nix
       ../../modules/hyprland.nix
       ../../modules/gaming.nix
-      ../../modules/development/godot-workflow.nix
+      # ../../modules/development/godot-workflow.nix
       ../../modules/services/printing.nix
     ];
 
@@ -49,7 +49,6 @@
     #  consider using firewalld to manage firewall interactively -- would replace existing firewall
     # firewalld
     # firewalld-gui
-    font-manager
     google-chrome
     kdePackages.koko
     krita
