@@ -3,12 +3,11 @@
 sudo dnf install \
     azure-cli \
     bat \
-    docker-compose \
+    dnf-plugins-core \
     ffmpeg \
     fzf \
     gh \
     helix \
-    podman-compose \
     ripgrep \
     stow \
     zoxide \
@@ -24,6 +23,11 @@ sudo dnf install starship
 
 sudo dnf copr enable quadratech188/vicinae &&
 sudo dnf install vicinae
+
+# from addrepo
+
+sudo dnf config-manager addrepo --from-repofile https://download.docker.com/linux/fedora/docker-ce.repo
+sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 # Wezterm also available on flathub
 sudo dnf copr enable wezfurlong/wezterm-nightly &&
@@ -47,5 +51,4 @@ sudo dnf install code
 
 # configuration
 
-systemctl --user start podman.socket
-systemctl --user enable podman.socket
+sudo systemctl enable --now docker
