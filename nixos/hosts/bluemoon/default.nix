@@ -49,7 +49,7 @@
     #  consider using firewalld to manage firewall interactively -- would replace existing firewall
     # firewalld
     # firewalld-gui
-    google-chrome
+    # google-chrome
     kdePackages.koko
     krita
     libreoffice
