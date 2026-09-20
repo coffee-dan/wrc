@@ -37,6 +37,7 @@
         # CLI - Utils - Etc
         brightnessctl       # laptop brightness control
         cliphist
+        hyprlock
         hyprpaper
         hyprpolkitagent
         playerctl           # media player control
