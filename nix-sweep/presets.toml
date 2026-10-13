@@ -1,0 +1,5 @@
+[housekeeping]
+keep-min = 4
+remove-older = "2w"
+interactive = true
+gc = false

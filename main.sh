@@ -29,6 +29,7 @@ safe-stow git        $HOME/.config/git
 safe-stow helix      $HOME/.config/helix
 safe-stow hypr       $HOME/.config/hypr
 safe-stow kitty      $HOME/.config/kitty
+safe-stow nix-sweep  $HOME/.config/nix-sweep
 safe-stow nvim       $HOME/.config/nvim
 safe-stow rofi       $HOME/.config/rofi
 safe-stow satty      $HOME/.config/satty
