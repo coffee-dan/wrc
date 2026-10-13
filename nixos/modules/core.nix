@@ -107,6 +107,7 @@
     libwebp
     mise
     nixfmt
+    nix-sweep
     noto-fonts
     # TODO: determine if this is needed
     pulseaudioFull
