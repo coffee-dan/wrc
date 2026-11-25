@@ -1,5 +1,5 @@
 # Core system configuration that should be common across all hosts
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, pkgs-stable, ... }:
 {
   # Bootloader configuration (can be override by specific hosts)
   boot.loader.systemd-boot.enable = lib.mkDefault true;
@@ -90,7 +90,7 @@
   programs.firefox.enable = true;
 
   # Basic packages used by all hosts (should be lightweight)
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = (with pkgs; [
     # CLI - Utils - Etc
     bat
     bottom
@@ -127,8 +127,6 @@
 
     # GUI - Applications
     _1password-gui
-    discord
-    kphotoalbum
     # mpv # weird brightness issue at the moment
     pinta
     proton-vpn
@@ -138,7 +136,15 @@
     vlc
     vscode
     wezterm
-  ];
+  ])
+
+  ++
+
+  (with pkgs-stable; [
+    # list of packages that should be pulled from stable
+    discord
+    kphotoalbum
+  ]);
 
   fonts = {
     enableDefaultPackages = true;

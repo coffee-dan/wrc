@@ -3,11 +3,12 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs?ref=nixos-26.05";
     # https://github.com/0xc000022070/zen-browser-flake
     # zen-browser.url = "github:0xc000022070/zen-browser-flake";
   };
 
-  outputs = { nixpkgs, ... } @ inputs:
+  outputs = { nixpkgs, nixpkgs-stable, ... } @ inputs:
   let
     system = "x86_64-linux";
 
@@ -15,7 +16,15 @@
     mkHost = { hostname, system ? "x86_64-linux" }:
       nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = { inherit inputs; };
+        specialArgs = {
+          inherit inputs;
+          # inherit pkgs-stable;
+
+          pkgs-stable = import nixpkgs-stable {
+            inherit system;
+            config.allowUnfree = true;
+          };
+        };
         modules = [
           ./hosts/${hostname}
         ];
