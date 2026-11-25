@@ -1,5 +1,11 @@
 # Core system configuration that should be common across all hosts
-{ config, lib, pkgs, pkgs-stable, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  pkgs-stable,
+  ...
+}:
 {
   # Bootloader configuration (can be override by specific hosts)
   boot.loader.systemd-boot.enable = lib.mkDefault true;
@@ -11,7 +17,10 @@
   #   settings for stateful data, like file locations and datbase versions
   #   on your system were taken.
   system.stateVersion = lib.mkDefault "24.05";
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
   #   Allow unfree packages by default (can be override)
   nixpkgs.config.allowUnfree = lib.mkDefault true;
 
@@ -65,9 +74,13 @@
     # TODO: determine if these groups can be defined in /hosts/<host>.nix
     # - this may be needed for groups that only exist based on config (ex: docker, networkmanager)
     # - this may not be needed in add an extragroup with no meaning is fine (ex: foobar)
-    extraGroups = [ "docker" "networkmanager" "wheel" ];
+    extraGroups = [
+      "docker"
+      "networkmanager"
+      "wheel"
+    ];
     packages = with pkgs; [
-    #  thunderbird
+      #  thunderbird
     ];
   };
 
@@ -90,61 +103,59 @@
   programs.firefox.enable = true;
 
   # Basic packages used by all hosts (should be lightweight)
-  environment.systemPackages = (with pkgs; [
-    # CLI - Utils - Etc
-    bat
-    bottom
-    cmatrix
-    fastfetch
-    ffmpeg
-    file
-    freetype
-    fzf
-    gh
-    git
-    helix
-    jq
-    libwebp
-    mise
-    nixfmt
-    nix-sweep
-    noto-fonts
-    # TODO: determine if this is needed
-    pulseaudioFull
-    rar
-    ripgrep
-    starship
-    stow
-    trashy
-    tree
-    udisks
-    unzip
-    # vitetris # currently crashes on start
-    wget
-    zip
-    zoxide
-    zsh
+  environment.systemPackages =
+    (with pkgs; [
+      # CLI - Utils - Etc
+      bat
+      bottom
+      cmatrix
+      fastfetch
+      ffmpeg
+      file
+      freetype
+      fzf
+      gh
+      git
+      helix
+      jq
+      libwebp
+      mise
+      nixfmt
+      nix-sweep
+      noto-fonts
+      # TODO: determine if this is needed
+      pulseaudioFull
+      rar
+      ripgrep
+      starship
+      stow
+      trashy
+      tree
+      udisks
+      unzip
+      # vitetris # currently crashes on start
+      wget
+      zip
+      zoxide
+      zsh
 
-    # GUI - Applications
-    _1password-gui
-    # mpv # weird brightness issue at the moment
-    pinta
-    proton-vpn
-    # sherlock-launcher # unused in favor of vicinae
-    # ulauncher # unused in favor of vicinae
-    vicinae
-    vlc
-    vscode
-    wezterm
-  ])
-
-  ++
-
-  (with pkgs-stable; [
-    # list of packages that should be pulled from stable
-    discord
-    kphotoalbum
-  ]);
+      # GUI - Applications
+      _1password-gui
+      # mpv # weird brightness issue at the moment
+      pinta
+      proton-vpn
+      # sherlock-launcher # unused in favor of vicinae
+      # ulauncher # unused in favor of vicinae
+      vicinae
+      vlc
+      vscode
+      wezterm
+    ])
+    ++ (with pkgs-stable; [
+      # list of packages that should be pulled from stable
+      discord
+      kphotoalbum
+    ]);
 
   fonts = {
     enableDefaultPackages = true;

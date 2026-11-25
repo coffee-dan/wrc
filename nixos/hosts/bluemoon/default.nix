@@ -1,17 +1,21 @@
-{ config, pkgs, inputs, ... }:
 {
-  imports =
-    [
-      # Include hardware configuration (will need to be generated when setting up the PC)
-      ./hardware-configuration.nix
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
+{
+  imports = [
+    # Include hardware configuration (will need to be generated when setting up the PC)
+    ./hardware-configuration.nix
 
-      # Include building blocks for specific stuff
-      ../../modules/core.nix
-      ../../modules/hyprland.nix
-      ../../modules/gaming.nix
-      # ../../modules/development/godot-workflow.nix
-      ../../modules/services/printing.nix
-    ];
+    # Include building blocks for specific stuff
+    ../../modules/core.nix
+    ../../modules/hyprland.nix
+    ../../modules/gaming.nix
+    # ../../modules/development/godot-workflow.nix
+    ../../modules/services/printing.nix
+  ];
 
   networking.hostName = "bluemoon";
 
