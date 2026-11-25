@@ -128,6 +128,7 @@
     # GUI - Applications
     _1password-gui
     discord
+    kphotoalbum
     # mpv # weird brightness issue at the moment
     pinta
     proton-vpn
